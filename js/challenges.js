@@ -84,8 +84,7 @@ export const challenges = {
         new CE("Use 1 monk to deliver a relic", 1, null, "deliver_relic"),
     ],
     'miscellaneous': [
-        new CE("[Solo] Choose civ for points", 2),
-        new CE("[Solo] Allow laming", 2),
+        new CE("[Solo] Choose civ", 1),
         new CE("No laming", 1),
         new CE("Max 150 pop", 2, null, "max_150_pop"),
         new CE("Max 100 pop", 4, null, "max_100_pop"),

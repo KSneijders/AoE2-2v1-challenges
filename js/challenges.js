@@ -2,7 +2,9 @@ import {ChallengeEntry as CE} from "./challenge-entry.js";
 
 export const challenges = {
     'economics': [
-        new CE("Delete n starting vills", 2, [1, 2, 3]),
+        new CE("Delete 1 starting vill", 2),
+        new CE("Delete 2 starting vills", 4),
+        new CE("Delete 3 starting vills", 7),
         new CE("No sheep", 3, null, "no_sheep"),
         new CE("No hunt", 2),
         new CE("No forage bush", 1),
@@ -27,7 +29,7 @@ export const challenges = {
         new CE("No gold units (except siege)", 9, null, "no_gold_units"),
         new CE("No trash units", 5, null, "no_trash"),
         new CE("No unique unit", 2, null, "no_uu"),
-        new CE("Delete starting scout", 5),
+        new CE("Delete starting scout", 3),
         new CE("One unit type per mil. building", 3),
         new CE("Only make 1 unit type in Feudal", 3),
         new CE("No eagles", 1, null, "no_eagles"),
@@ -66,16 +68,16 @@ export const challenges = {
         new CE("No bloodlines", 1, null, "no_bloodlines"),
         new CE("No ballistics", 2, null, "no_ballistics"),
         new CE("Get murder holes", 1, null, "get_murder_holes"),
-        new CE("Get heresy", 4, null, "get_heresy"),
+        new CE("Get heresy", 3, null, "get_heresy"),
     ],
     'commands': [
         new CE("Delete all forwards", 8),
-        new CE("Delete all houses", 3),
+        new CE("Delete all houses", 2),
         new CE("Send all of resource x", 4, null, "send_all_x_resource"),
         new CE("Delete all TCs (Feudal+)", 7, null, "delete_all_tcs"),
         new CE("Cancel all queues", 2),
         new CE("Delete all walls", 2, null, "delete_all_walls"),
-        new CE("Create gap in wall at X", 3),
+        new CE("Create gap in wall at X", 1),
         new CE("Send all army to X", 3),
         new CE("Sell all of resource x", 1, null, "sell_all_x_resource"),
         new CE("All players delete all military", 4),
@@ -92,7 +94,7 @@ export const challenges = {
         new CE("One player migrates to ally", 9, null, "ally_migration"),
         new CE("No relics", 1),
         new CE("Instant loom", 1),
-        new CE("Sacrifice 10 monks", 2),
+        new CE("Sacrifice 10 monks", 4),
         new CE("Kill 5 vills each time housed", 5),
     ],
 }

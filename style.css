@@ -1,0 +1,77 @@
+body {
+    background-color: #BBB;
+    font-family: "Arial", sans-serif;
+}
+
+.column {
+    margin: 1px;
+    display: inline-block;
+    width: calc(100% / 6 - 5px);
+    /*border: 1px solid black;*/
+    vertical-align: top;
+}
+
+.column .col-body {
+    padding: 3px;
+}
+
+.column .col-body table {
+    width: 100%;
+    border-spacing: 0;
+    border: 1px solid black;
+}
+
+.column table th {
+    text-align: left;
+}
+
+.column table td {
+    border-bottom: 1px dotted black;
+    min-width: 40px;
+}
+
+.column .col-head {
+    font-size: 18px;
+    /*border-bottom: 1px solid black;*/
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+}
+
+#points-wrapper {
+    padding: 8px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+#points-wrapper table {
+    border-spacing: 0;
+}
+
+#points-wrapper table tr td {
+    min-width: 90px;
+    text-align: center;
+}
+
+#points-wrapper table tr td:first-child {
+    text-align: left;
+}
+
+#point-total td {
+    border-top: 1px solid black;
+}
+
+cap {
+    text-transform: capitalize;
+}
+
+select {
+    padding: 3px
+}
+
+#challenge-list {
+    padding: 8px;
+    margin-left: 50px;
+    vertical-align: top;
+    display: inline-block;
+}

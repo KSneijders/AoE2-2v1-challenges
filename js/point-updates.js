@@ -1,5 +1,5 @@
 import {COLS, NON_WILDCOLS, WILDCOLS} from "../index.js";
-import {getCurrentPlayerTotalScore, getSelectedOptionValueInt, setGettable, totalObjValueSum} from "./helper.js";
+import {getSelectedOptionValueInt, setGettable, totalObjValueSum} from "./helper.js";
 import {hasLimiter, updateLimits} from "./challenge-limiters.js";
 
 export const pointScore = {};
@@ -128,8 +128,7 @@ function getSpendableWildPoints() {
 }
 
 function updatePointsView() {
-    let totalScore = getCurrentPlayerTotalScore();
-    if (!totalScore) return
+    let totalScore = parseInt($('#point-selector').val())
 
     for (let col of COLS) {
         $(`#point-${col} .points`).html(pointScore[col])
@@ -164,7 +163,7 @@ function updateSelectedChallengesView() {
     $('#col-wrapper select option:selected').each(function () {
         if ($(this).attr('value') !== '0') {
             let txt = $(this).parent().parent().parent().find('td:nth-child(3)').text()
-            ul.append(`<li>${txt} (${$(this).text()})</li>`)
+            ul.append(`<li>${txt} (${$(this).attr('effect')})</li>`)
         }
     });
     list.append(ul)

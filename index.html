@@ -13,7 +13,7 @@
     <div id="points-wrapper">
         <table>
             <tr>
-                <th>Column</th>
+                <th></th>
                 <th>Used/Max</th>
             </tr>
         </table>
@@ -21,8 +21,8 @@
             <button id="reset-challenges">Reset</button>
         </div>
         <div style="clear: both"></div>
-        <label for="player-selector">Player:</label>
-        <select id="player-selector"><option selected disabled>Choose Player</option></select>
+        <label for="point-selector">Points:</label>
+        <input id="point-selector" type="number" style="width: 80px" value="20">
         (<span id="player-total-score">0</span>)
         <button id="random-generator-button">Generate Randoms</button>
     </div>
@@ -31,7 +31,7 @@
         <div id="challenge-list-body"></div>
     </div>
 </body>
-<script src="js/jquery.js"></script>
+<script src="lib/jquery.js"></script>
 <script type="module" src="index.js"></script>
 <script type="module" src="js/events.js"></script>
 </html>

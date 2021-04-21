@@ -16,24 +16,10 @@ $(document).on('change', '.column select', function () {
     setPoints(coltype, getPointSpentInCol(coltype))
 });
 
-$(document).on('change', '#player-selector', function () {
-    reset()
-    let player = getSelectedOptionValue($(this))
-
-    let totalScore = settings['score'][player]
-    let fixedP = settings['fixedScorePercentage']
-    let fixedPoints = Math.floor(totalScore * (fixedP / 100))
-
-    $('#player-total-score').html(`${totalScore} ~${fixedPoints}`)
-});
-
 $(document).on('click', '#random-generator-button', function () {
-    let player = getSelectedOptionValue($('#player-selector'))
-    if (!player) return
-
     reset()
 
-    let totalScore = settings['score'][player]
+    let totalScore = parseInt($('#point-selector').val())
     let fixedP = settings['fixedScorePercentage']
     let fixedPoints = Math.floor(totalScore * (fixedP / 100))
     let randoms = {}
@@ -58,6 +44,19 @@ $(document).on('click', '#reset-challenges', function() {
     reset(false)
     update()
 });
+
+$(document).on('input', '#point-selector', function () {
+    reset()
+    let fixedP = settings['fixedScorePercentage']
+    let value = $(this).val()
+    let fixedPoints = Math.floor(value * (fixedP / 100))
+    $('#player-total-score').html(`${value} ~${fixedPoints}`)
+
+    // localStorage.getItem('set-points');
+    // localStorage.removeItem('set-points');
+    localStorage.setItem('set-points', value);
+    update()
+})
 
 function getColType(thisRef) {
     return $(thisRef).parent().parent().parent().parent().parent().attr('coltype')

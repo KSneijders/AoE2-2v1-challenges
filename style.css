@@ -27,7 +27,7 @@ body {
 
 .column table td {
     border-bottom: 1px dotted black;
-    min-width: 40px;
+    min-width: 20px;
 }
 
 .column .col-head {

@@ -7,7 +7,7 @@ const htmlCol =
 const tableRow =
     `<tr {{ATTRIBUTES}} points='{{POINTS}}'>
         <td>{{CHECK}}</td>
-        <td style='font-weight: bold'>{{POINTS_TEXT}}</td>
+        <td style='font-weight: bold; text-align: center'>{{POINTS_TEXT}}</td>
         <td>{{NAME}}</td>
     </tr>`
 

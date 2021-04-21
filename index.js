@@ -1,21 +1,18 @@
-import {getSettingsFile} from "./js/settings.js";
+import {getSettingsFile} from "./js/files.js";
 import {buildPage} from "./js/page.js";
+import {defineChallenges} from "./js/challenges.js";
 
 export const PLAYERS = ['delano', 'seth', 'kerwin']
 export const COLS = ['economics', 'military', 'building', 'technologies', 'commands', 'miscellaneous']
 export const WILDCOLS = ['commands', 'miscellaneous']
 export const NON_WILDCOLS = COLS.filter((element) => {return !WILDCOLS.includes(element)})
 
-export let settings = {}
+export var settings = undefined
 
-getSettingsFile().then(
-    (data) => {
-        for (let player of PLAYERS) {
-            if (!(player in data['score']))
-                throw new Error(`Unknown player. Please add ${player} to the settings.json`)
-        }
+async function start() {
+    settings = await getSettingsFile()
+    await defineChallenges()
+    buildPage()
+}
 
-        settings = data
-        buildPage()
-    }
-);
+start().then(() => console.log('Application ready!'))

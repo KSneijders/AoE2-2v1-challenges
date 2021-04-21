@@ -8,7 +8,7 @@ export function totalObjValueSum(obj) {
 
 function resetInputFields() {
     $('input').prop('checked', false);
-    $('select').not('#player-selector').val(0).change()
+    $('select').val(0).change()
 }
 
 function resetPointScores(hardReset) {
@@ -35,12 +35,6 @@ export function getSelectedOptionValue(element) {
 
 export function getSelectedOptionValueInt(element) {
     return parseInt(element.find('option:selected').attr('value'))
-}
-
-export function getCurrentPlayerTotalScore() {
-    let player = getSelectedOptionValue($('#player-selector'))
-    if (!player) return null
-    return settings['score'][player]
 }
 
 const defaultColors = {true: '#000000', false: '#959595'}

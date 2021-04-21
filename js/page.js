@@ -1,7 +1,7 @@
 import {update} from "./point-updates.js";
 import {htmlCol, pointNonTableRow, pointTableRowInTdMax, tableRow} from "./html-blobs.js";
 import {challenges} from "./challenges.js";
-import {COLS, PLAYERS} from "../index.js";
+import {COLS} from "../index.js";
 import {reset} from "./helper.js";
 
 export function buildPage() {
@@ -35,32 +35,52 @@ export function buildPage() {
         let table = $(`#col-${colsKey} table`)
 
         for (let challengesEntry of challenges[colsKey]) {
-            let box = '<input class="point-field" type="checkbox">'
-            if (challengesEntry.range) {
-                box = '<select class="point-field"><option value="0">0</option>'
-                for (let i = 0; i < challengesEntry.range.length; i++) {
-                    box += `<option value="${i + 1}">${challengesEntry.range[i]}</option>`
+
+            let box;
+            let pointText = challengesEntry.points
+            if (challengesEntry['range'] || challengesEntry['c-range']) {
+                let customRange = challengesEntry.hasOwnProperty('c-range')
+                let key = customRange ? 'c-range' : 'range'
+                let points = []
+
+                box = '<select class="point-field" style="width: 60px"><option value="0">0</option>'
+                for (let i = 0; i < challengesEntry[key].length; i++) {
+                    let entry = challengesEntry[key][i]
+                    if (!customRange) {
+                        let points = challengesEntry['points']
+                        box += `<option effect="${entry}" value="${i + 1}">${entry}, ${points * (i + 1)}</option>`
+                    } else {
+                        let [val, txt] = entry
+                        box += `<option effect="${txt}" value="${val}">${txt}, ${val}</option>`
+                        points.push(val)
+                    }
                 }
                 box += '</select>'
+
+                if (customRange) {
+                    pointText = `${points[0]}+`
+                } else {
+                    pointText += '<sup>x</sup>'
+                }
+            } else {
+                box = `<input class="point-field" type="checkbox">`
             }
 
             let attributes = ""
-            if (challengesEntry.uniqueIdentifier)
-                attributes = `id="${challengesEntry.uniqueIdentifier}"`
+            if (challengesEntry['id'])
+                attributes = `id="${challengesEntry['id']}"`
             let tableRowString = tableRow
                 .replaceAll('{{CHECK}}', box)
-                .replaceAll('{{POINTS}}', challengesEntry.points)
-                .replaceAll('{{POINTS_TEXT}}', challengesEntry.points)
-                .replaceAll('{{NAME}}', challengesEntry.name)
+                .replaceAll('{{POINTS}}', challengesEntry['points'])
+                .replaceAll('{{POINTS_TEXT}}', pointText)
+                .replaceAll('{{NAME}}', challengesEntry['name'])
                 .replaceAll('{{ATTRIBUTES}}', attributes)
             table.append(tableRowString)
         }
     }
 
-    // Create player dropdown
-    for (let player of PLAYERS) {
-        $('#player-selector').append(`<option value="${player}">${player}</option>`)
-    }
+    let oldPoints = localStorage.getItem('set-points')
+    if (oldPoints) $('#point-selector').val(oldPoints).trigger('input')
 
     update()
 }

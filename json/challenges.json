@@ -1,0 +1,532 @@
+{
+    "economics": [
+        {
+            "name": "Delete starting vills",
+            "points": 1,
+            "id": null,
+            "c-range": [
+                [
+                    2,
+                    "1"
+                ],
+                [
+                    4,
+                    "2"
+                ],
+                [
+                    7,
+                    "3"
+                ]
+            ]
+        },
+        {
+            "name": "No sheep",
+            "points": 3,
+            "id": "no_sheep",
+            "range": null
+        },
+        {
+            "name": "No hunt",
+            "points": 2,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No forage bush",
+            "points": 1,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No miningcamps",
+            "points": 3,
+            "id": "no_mining_camps",
+            "range": null
+        },
+        {
+            "name": "No lumbercamps",
+            "points": 4,
+            "id": "no_lumber_camps",
+            "range": null
+        },
+        {
+            "name": "No mills (except for 1)",
+            "points": 2,
+            "id": "no_mills",
+            "range": null
+        },
+        {
+            "name": "No extra TCs",
+            "points": 3,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Kill % vills per age",
+            "points": 3,
+            "id": null,
+            "range": [
+                "10",
+                "20",
+                "30",
+                "40",
+                "50"
+            ]
+        },
+        {
+            "name": "Max vills in dark age",
+            "points": 4,
+            "id": null,
+            "range": [
+                18,
+                14
+            ]
+        },
+        {
+            "name": "No mining upgrades",
+            "points": 2,
+            "id": "no_mining_upgrades",
+            "range": null
+        },
+        {
+            "name": "No lumber upgrades",
+            "points": 2,
+            "id": "no_lumber_upgrades",
+            "range": null
+        },
+        {
+            "name": "No mill upgrades",
+            "points": 1,
+            "id": "no_mill_upgrades",
+            "range": null
+        },
+        {
+            "name": "No stone",
+            "points": 2,
+            "id": "no_stone",
+            "range": null
+        },
+        {
+            "name": "No selling/buying",
+            "points": 3,
+            "id": "no_selling_buying",
+            "range": null
+        },
+        {
+            "name": "No trade",
+            "points": 1,
+            "id": "no_trade",
+            "range": null
+        },
+        {
+            "name": "Send sheep to solo player",
+            "points": 4,
+            "id": "send_sheep_to_solo",
+            "range": null
+        },
+        {
+            "name": "No wheelbarrow",
+            "points": 2,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No loom",
+            "points": 5,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Stragglers before lumbercamp",
+            "points": 1,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "All farms must touch a mill",
+            "points": 3,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Max farms",
+            "points": 2,
+            "id": null,
+            "range": [
+                20,
+                15,
+                10
+            ]
+        }
+    ],
+    "military": [
+        {
+            "name": "No gold units (except siege)",
+            "points": 9,
+            "id": "no_gold_units",
+            "range": null
+        },
+        {
+            "name": "No trash units",
+            "points": 5,
+            "id": "no_trash",
+            "range": null
+        },
+        {
+            "name": "No unique unit",
+            "points": 2,
+            "id": "no_uu",
+            "range": null
+        },
+        {
+            "name": "Delete starting scout",
+            "points": 3,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "One unit type per mil. building",
+            "points": 3,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Only make 1 unit type in Feudal",
+            "points": 3,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No eagles",
+            "points": 1,
+            "id": "no_eagles",
+            "range": null
+        },
+        {
+            "name": "No elephants",
+            "points": 1,
+            "id": "no_elephants",
+            "range": null
+        },
+        {
+            "name": "No knight line",
+            "points": 3,
+            "id": "no_knights",
+            "range": null
+        },
+        {
+            "name": "No archer line",
+            "points": 3,
+            "id": "no_archers",
+            "range": null
+        },
+        {
+            "name": "No cav-archers",
+            "points": 1,
+            "id": "no_cav_archers",
+            "range": null
+        },
+        {
+            "name": "No units from civ identity (tech-tree)",
+            "points": 5,
+            "id": "no_good_civ_units",
+            "range": null
+        }
+    ],
+    "building": [
+        {
+            "name": "Every building twice",
+            "points": 10,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No walls",
+            "points": 4,
+            "id": "no_walls",
+            "range": null
+        },
+        {
+            "name": "Leave gaps between walls",
+            "points": 5,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No towers (donjon)",
+            "points": 3,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No barracks",
+            "points": 4,
+            "id": "no_barracks",
+            "range": null
+        },
+        {
+            "name": "No archery range",
+            "points": 6,
+            "id": "no_archery_range",
+            "range": null
+        },
+        {
+            "name": "No stable",
+            "points": 6,
+            "id": "no_stable",
+            "range": null
+        },
+        {
+            "name": "No university",
+            "points": 3,
+            "id": "no_university",
+            "range": null
+        },
+        {
+            "name": "No monastery",
+            "points": 2,
+            "id": "no_monastery",
+            "range": null
+        },
+        {
+            "name": "No castles (krepost)",
+            "points": 7,
+            "id": "no_castle",
+            "range": null
+        },
+        {
+            "name": "No siege workshop",
+            "points": 4,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No docks",
+            "points": 3,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No market",
+            "points": 6,
+            "id": "no_market",
+            "range": null
+        },
+        {
+            "name": "Instant 8 houses",
+            "points": 3,
+            "id": "instant_8_houses",
+            "range": null
+        },
+        {
+            "name": "Instant barracks",
+            "points": 2,
+            "id": "instant_barracks",
+            "range": null
+        },
+        {
+            "name": "Make all possible buildings",
+            "points": 4,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "All military buildings in one camp",
+            "points": 4,
+            "id": null,
+            "range": null
+        }
+    ],
+    "technologies": [
+        {
+            "name": "No current age blacksmith techs",
+            "points": 5,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No archer range & attack",
+            "points": 5,
+            "id": "no_archer_attack",
+            "range": null
+        },
+        {
+            "name": "No archer defence",
+            "points": 3,
+            "id": "no_archer_defence",
+            "range": null
+        },
+        {
+            "name": "No melee attack",
+            "points": 2,
+            "id": "no_melee_attack",
+            "range": null
+        },
+        {
+            "name": "No infantry defence",
+            "points": 2,
+            "id": "no_infantry_defence",
+            "range": null
+        },
+        {
+            "name": "No cavalry defence",
+            "points": 4,
+            "id": "no_cavalry_defence",
+            "range": null
+        },
+        {
+            "name": "No unique techs",
+            "points": 1,
+            "id": "no_unique_techs",
+            "range": null
+        },
+        {
+            "name": "No bloodlines",
+            "points": 1,
+            "id": "no_bloodlines",
+            "range": null
+        },
+        {
+            "name": "No ballistics",
+            "points": 2,
+            "id": "no_ballistics",
+            "range": null
+        },
+        {
+            "name": "Get murder holes",
+            "points": 1,
+            "id": "get_murder_holes",
+            "range": null
+        },
+        {
+            "name": "Get heresy",
+            "points": 3,
+            "id": "get_heresy",
+            "range": null
+        }
+    ],
+    "commands": [
+        {
+            "name": "Delete all forwards",
+            "points": 8,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Delete all houses",
+            "points": 2,
+            "id": "delete_all_houses",
+            "range": null
+        },
+        {
+            "name": "Send all of resource x",
+            "points": 4,
+            "id": "send_all_x_resource",
+            "range": null
+        },
+        {
+            "name": "Delete all TCs (Feudal+)",
+            "points": 7,
+            "id": "delete_all_tcs",
+            "range": null
+        },
+        {
+            "name": "Cancel all queues for 30s",
+            "points": 2,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Delete all walls",
+            "points": 2,
+            "id": "delete_all_walls",
+            "range": null
+        },
+        {
+            "name": "Create gap in wall at X",
+            "points": 1,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Send all army to X",
+            "points": 3,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Sell all of resource x",
+            "points": 1,
+            "id": "sell_all_x_resource",
+            "range": null
+        },
+        {
+            "name": "All players delete all military",
+            "points": 4,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Use 1 monk to deliver a relic",
+            "points": 1,
+            "id": "deliver_relic",
+            "range": null
+        }
+    ],
+    "miscellaneous": [
+        {
+            "name": "[Solo] Choose civ",
+            "points": 1,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "No laming",
+            "points": 1,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Max pop",
+            "points": 1,
+            "id": "max_pop",
+            "c-range": [[2, "150"], [4, "100"], [7, "75"]]
+        },
+        {
+            "name": "No scouting (except vills)",
+            "points": 4,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "One player migrates to ally",
+            "points": 9,
+            "id": "ally_migration",
+            "range": null
+        },
+        {
+            "name": "No relics",
+            "points": 1,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Instant loom",
+            "points": 1,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Sacrifice 10 monks",
+            "points": 4,
+            "id": null,
+            "range": null
+        },
+        {
+            "name": "Kill 5 vills each time housed",
+            "points": 5,
+            "id": "kill_vills_when_housed",
+            "range": null
+        }
+    ]
+}

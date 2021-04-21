@@ -1,0 +1,32 @@
+{
+    "mutually-exclusive": [
+        ["no_stone", "no_selling_buying"],
+        ["no_barracks", "no_archery_range", "no_stable", "no_gold_units", "no_trash"],
+        ["no_sheep", "send_sheep_to_solo"],
+        ["no_barracks", "instant_barracks"],
+        ["instant_8_houses", "instant_barracks", "ally_migration"],
+        ["no_archer_attack", "no_archer_defence"],
+        ["no_infantry_defence", "no_melee_attack"],
+        ["no_melee_attack", "no_cavalry_defence"],
+        ["no_lumber_camps", "delete_all_tcs"],
+        ["no_mining_camps", "delete_all_tcs"],
+        ["delete_all_houses", "kill_vills_when_housed"]
+    ],
+    "one-way-exclusive": {
+        "no_walls":           ["delete_all_walls"],
+        "no_selling_buying":  ["sell_all_x_resource"],
+        "no_castle":          ["no_uu", "no_unique_techs"],
+        "no_mining_camps":    ["no_mining_upgrades"],
+        "no_lumber_camps":    ["no_lumber_upgrades"],
+        "no_mills":           ["no_mill_upgrades"],
+        "no_market":          ["no_stone", "no_selling_buying", "sell_all_x_resource", "no_trade", "send_all_x_resource"],
+        "no_stable":          ["no_bloodlines", "no_elephants", "no_knights"],
+        "no_barracks":        ["no_eagles"],
+        "no_archery_range":   ["no_archers", "no_cav_archers"],
+        "no_university":      ["no_ballistics", "get_murder_holes"],
+        "no_monastery":       ["get_heresy", "deliver_relic"]
+    },
+    "all-but-one": [
+        ["Todo: Add this"]
+    ]
+}

@@ -23,6 +23,8 @@ function resetPointScores(hardReset) {
 export function reset(hardReset = true) {
     resetInputFields()
     resetPointScores(hardReset)
+    wildPoints['points'] = 0
+    wildPoints['max-points'] = 0
 }
 
 export function getTrField(trRef) {

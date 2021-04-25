@@ -2,9 +2,8 @@ import {getSettingsFile} from "./js/files.js";
 import {buildPage} from "./js/page.js";
 import {defineChallenges} from "./js/challenges.js";
 
-export const PLAYERS = ['delano', 'seth', 'kerwin']
-export const COLS = ['economics', 'military', 'building', 'technologies', 'commands', 'miscellaneous']
-export const WILDCOLS = ['commands', 'miscellaneous']
+export const COLS = ['economics', 'military', 'building', 'technologies', 'miscellaneous', 'commands']
+export const WILDCOLS = ['miscellaneous', 'commands']
 export const NON_WILDCOLS = COLS.filter((element) => {return !WILDCOLS.includes(element)})
 
 export var settings = undefined

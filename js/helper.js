@@ -24,7 +24,15 @@ function resetPointScores(hardReset) {
 
 export function disableColumn(colName) {
     $(`#col-${colName}`).find('tr').each(function() {
-        setGettable($(this), false);
+        if (!$(this).find('.point-field').is(':disabled')) {
+            setGettable($(this), false);
+        }
+    });
+}
+
+export function enableColumn(colName) {
+    $(`#col-${colName}`).find('tr').each(function() {
+        setGettable($(this), true);
     });
 }
 

@@ -180,5 +180,6 @@ function update() {
 export {
     setPoints,
     getPointSpentInCol,
-    update
+    update,
+    updateChallengeLimiters
 }

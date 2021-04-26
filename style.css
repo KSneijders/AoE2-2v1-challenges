@@ -39,8 +39,7 @@ body {
 }
 
 #points-wrapper {
-    padding: 8px;
-    border: 1px solid black;
+    padding: 12px;
     display: inline-block;
 }
 
@@ -69,9 +68,24 @@ select {
     padding: 3px
 }
 
-#challenge-list {
-    padding: 8px;
+#challenge-list, #controls {
+    padding: 12px;
     margin-left: 50px;
     vertical-align: top;
     display: inline-block;
+}
+
+.general-control-button {
+    min-width: 100%;
+    padding: 3px;
+}
+
+#reset-challenges {
+    /*background-color: #af2222;*/
+}
+#generate-solo {
+
+}
+#generate-duo {
+
 }

@@ -11,20 +11,37 @@
     <div id="col-wrapper"></div>
     <hr>
     <div id="points-wrapper">
+        <b>Point distributions</b><br><br>
         <table>
             <tr>
                 <th></th>
                 <th>Used/Max</th>
             </tr>
         </table>
-        <div style="height: 3em; float: right; margin-bottom: -20px">
-            <button id="reset-challenges">Reset</button>
-        </div>
-        <div style="clear: both"></div>
-        <label for="point-selector">Points:</label>
-        <input id="point-selector" type="number" style="width: 80px" value="20">
-        (<span id="player-total-score">0</span>)
-        <button id="random-generator-button">Generate Randoms</button>
+    </div>
+    <div id="controls">
+        <b>Controls</b><br><br>
+<!--        <div style="height: 5em"></div>-->
+        <table>
+            <tr>
+                <td><b><label for="point-selector">Points:</label></b></td>
+                <td><input id="point-selector" type="number" style="width: 80px" value="20"></td>
+            </tr>
+            <tr>
+                <td><b><label for="command-points">Command points:</label></b></td>
+                <td><span id="command-points"></span></td>
+            </tr>
+        </table>
+        <br>
+        <button class="general-control-button" id="generate-solo">Alleen naar A</button><br>
+        <button class="general-control-button" id="generate-duo">Samen naar B</button><br>
+        <br>
+        <button class="general-control-button" id="reset-challenges">Reset</button>
+<!--        <div style="clear: both"></div>-->
+<!--        <button id="random-generator-button">Generate Randoms</button>-->
+<!--        <br>-->
+
+
     </div>
     <div id="challenge-list">
         <div id="challenge-list-head"><b>Challenges:</b></div>

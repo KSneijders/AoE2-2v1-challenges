@@ -44,11 +44,9 @@ function setPoints(colType, value) {
 function updatePointDistribution() {
     let wildPoint = 0
 
-    for (let col of COLS) {
-        if (pointScore[col] > maxPointScore[col]) {
+    for (let col of COLS)
+        if (pointScore[col] > maxPointScore[col])
             wildPoint += (pointScore[col] - maxPointScore[col])
-        }
-    }
 
     let points = 0
     for (let col of NON_WILDCOLS) {
@@ -153,7 +151,8 @@ function updateSelectedChallengesView() {
     $('#col-wrapper input:checked').each(function () {
         let txt = $(this).parent().parent().find('td:nth-child(3)').text()
 
-        if ($(this).parents().eq(4).attr('coltype') === "commands") {
+        console.log(txt)
+        if ($(this).parents().eq(4).attr('coltype') === "commands" && txt !== "Choose civilisation") {
             ul.append(`<li>Command: ||${txt}||</li>`)
         } else {
             ul.append(`<li>${txt}</li>`)

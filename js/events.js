@@ -1,6 +1,7 @@
-import {getPointSpentInCol, maxPointScore, setPoints, update, wildPoints} from "./point-updates.js";
-import {COLS, settings, WILDCOLS} from "../index.js";
-import {getSelectedOptionValue, reset, totalObjValueSum} from "./helper.js";
+import {getPointSpentInCol, setPoints, update} from "./point-updates.js";
+import {COLS, NON_COMMAND_COLS, settings} from "../index.js";
+import {disableColumn, getRandomNonCommandCol, reset, selectRandomFromTrArray, startRandom} from "./helper.js";
+import {tableRow} from "./html-blobs.js";
 
 $(document).on('change', '.column input', function () {
     let coltype = getColType(this)
@@ -16,33 +17,15 @@ $(document).on('change', '.column select', function () {
     setPoints(coltype, getPointSpentInCol(coltype))
 });
 
-$(document).on('click', '#random-generator-button', function () {
-    reset()
-
-    let totalScore = parseInt($('#point-selector').val())
-    let fixedP = settings['fixedScorePercentage']
-    let fixedPoints = Math.floor(totalScore * (fixedP / 100))
-    let randoms = {}
-
-    for (let col of COLS) {
-        if (!WILDCOLS.includes(col)) {
-            randoms[col] = Math.random()
-        }
-    }
-
-    let randomSum = totalObjValueSum(randoms)
-    for (let col in randoms) {
-        maxPointScore[col] = Math.round((randoms[col] / randomSum) * fixedPoints)
-    }
-
-    wildPoints['max-points'] = totalScore - totalObjValueSum(maxPointScore)
-
-    update()
-});
-
 $(document).on('click', '#reset-challenges', function() {
-    reset(false)
+    reset(false);
     update()
+
+    if (window.PLAY_MODE === "duo") {
+        disableColumn('commands')
+    } else if (window.PLAY_MODE === "solo") {
+        COLS.forEach(disableColumn)
+    }
 });
 
 $(document).on('input', '#point-selector', function () {
@@ -50,13 +33,61 @@ $(document).on('input', '#point-selector', function () {
     let fixedP = settings['fixedScorePercentage']
     let value = $(this).val()
     let fixedPoints = Math.floor(value * (fixedP / 100))
-    $('#player-total-score').html(`${value} ~${fixedPoints}`)
+    $('#command-points').html(Math.floor(value / 2))
 
     // localStorage.getItem('set-points');
     // localStorage.removeItem('set-points');
     localStorage.setItem('set-points', value);
     update()
 })
+
+$(document).on('click', '#generate-duo', function() {
+    window.PLAY_MODE = "duo"
+    startRandom();
+    disableColumn('commands')
+
+    let maxPoints = parseInt($(`#point-total .max-points`).text())
+    while(maxPoints > parseInt($(`#point-total .points`).text())) {
+        let randomCol = getRandomNonCommandCol()
+        selectRandomFromTrArray($(`#col-${randomCol}`).find('tr'))
+    }
+});
+
+$(document).on('click', '#generate-solo', function() {
+    window.PLAY_MODE = "solo"
+    let maxPoints = parseInt($(`#command-points`).text())
+
+    let ps = $('#point-selector')
+    let old = ps.val()
+    ps.val(maxPoints)
+
+    startRandom()
+
+    while(maxPoints > parseInt($(`#point-commands .points`).text())) {
+        selectRandomFromTrArray($('#col-commands').find('tr'))
+    }
+
+    NON_COMMAND_COLS.forEach(disableColumn)
+    ps.val(old)
+
+    if (Math.random() < (1/20))
+        addChooseCiv()
+});
+
+function addChooseCiv() {
+    let chooseCiv = tableRow
+        .replaceAll('{{CHECK}}', '<input class="point-field" type="checkbox">')
+        .replaceAll('{{POINTS}}', '0')
+        .replaceAll('{{POINTS_TEXT}}', '-')
+        .replaceAll('{{NAME}}', 'Choose civilisation')
+        .replaceAll('{{ATTRIBUTES}}', '')
+    $(`#col-commands table`).append(chooseCiv)
+    $(`#col-commands table tr:last-child input`).prop({'checked': true})
+
+    update()
+
+    $(`#col-commands table tr:last-child`).remove()
+}
 
 function getColType(thisRef) {
     return $(thisRef).parent().parent().parent().parent().parent().attr('coltype')

@@ -1,5 +1,5 @@
-import {maxPointScore, pointScore, wildPoints} from "./point-updates.js";
-import {COLS, settings} from "../index.js";
+import {maxPointScore, pointScore, update, wildPoints} from "./point-updates.js";
+import {COLS, NON_COMMAND_COLS, settings, WILDCOLS} from "../index.js";
 
 export function totalObjValueSum(obj) {
     let data = Object.keys(obj).map(k => obj[k])
@@ -17,14 +17,28 @@ function resetPointScores(hardReset) {
         if (hardReset)
             maxPointScore[colType] = 0
     }
+    if (hardReset)
+        wildPoints['max-points'] = 0
     wildPoints['points'] = 0
+}
+
+export function disableColumn(colName) {
+    $(`#col-${colName}`).find('tr').each(function() {
+        setGettable($(this), false);
+    });
 }
 
 export function reset(hardReset = true) {
     resetInputFields()
     resetPointScores(hardReset)
-    wildPoints['points'] = 0
-    wildPoints['max-points'] = 0
+}
+
+export function getRandomNonCommandCol() {
+    return getRandomFromArray(NON_COMMAND_COLS)
+}
+
+export function getRandomFromArray(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export function getTrField(trRef) {
@@ -36,7 +50,7 @@ export function getSelectedOptionValue(element) {
 }
 
 export function getSelectedOptionValueInt(element) {
-    return parseInt(element.find('option:selected').attr('value'))
+    return parseInt(getSelectedOptionValue(element))
 }
 
 const defaultColors = {true: '#000000', false: '#959595'}
@@ -59,4 +73,44 @@ export function setGettable(tr, affordable, colors = null) {
 
     field.prop("disabled", !affordable)
     tr.css({'color': colors[affordable]})
+}
+
+export function startRandom() {
+    reset()
+
+    let totalScore = parseInt($('#point-selector').val())
+    let fixedP = settings['fixedScorePercentage']
+
+    let fixedPoints = Math.floor(totalScore * (fixedP / 100))
+    let randoms = {}
+
+    for (let col of COLS)
+        if (!WILDCOLS.includes(col))
+            randoms[col] = Math.random()
+
+    let randomSum = totalObjValueSum(randoms)
+    for (let col in randoms) {
+        maxPointScore[col] = Math.round((randoms[col] / randomSum) * fixedPoints)
+    }
+
+    wildPoints['max-points'] = totalScore - totalObjValueSum(maxPointScore)
+
+    update()
+}
+
+export function selectRandomFromTrArray(trArray) {
+    let tr = getRandomFromArray(trArray)
+
+    let pf = $($(tr).find('.point-field'))
+    if (!pf.is(':disabled')) {
+        if (pf[0].localName === "input") {
+            pf.trigger('click')
+        } else {
+            let options = pf.find('option:enabled').not('option[value="0"]')
+            if (options.length !== 0) {
+                let option = getRandomFromArray(pf.find('option:enabled').not('option[value="0"]'))
+                pf.val($(option).val()).change()
+            }
+        }
+    }
 }

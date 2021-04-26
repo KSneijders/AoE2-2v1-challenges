@@ -38,7 +38,7 @@
         },
         {
             "name": "No lumbercamps",
-            "points": 4,
+            "points": 5,
             "id": "no_lumber_camps"
         },
         {
@@ -156,7 +156,7 @@
         },
         {
             "name": "Only make 1 unit type in Feudal",
-            "points": 3
+            "points": 2
         },
         {
             "name": "No eagles",
@@ -388,10 +388,6 @@
         }
     ],
     "miscellaneous": [
-        {
-            "name": "[Solo] Choose civ",
-            "points": 1
-        },
         {
             "name": "No laming",
             "points": 1

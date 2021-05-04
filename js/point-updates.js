@@ -151,7 +151,6 @@ function updateSelectedChallengesView() {
     $('#col-wrapper input:checked').each(function () {
         let txt = $(this).parent().parent().find('td:nth-child(3)').text()
 
-        console.log(txt)
         if ($(this).parents().eq(4).attr('coltype') === "commands" && txt !== "Choose civilisation") {
             ul.append(`<li>Command: ||${txt}||</li>`)
         } else {

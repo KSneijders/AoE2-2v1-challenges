@@ -2,6 +2,7 @@
     "mutually-exclusive": [
         ["no_stone", "no_selling_buying"],
         ["no_barracks", "no_archery_range", "no_stable", "no_gold_units", "no_trash"],
+        ["no_siege_workshop", "no_gold_units"],
         ["no_sheep", "send_sheep_to_solo"],
         ["no_barracks", "instant_barracks"],
         ["instant_8_houses", "instant_barracks", "ally_migration"],
@@ -10,21 +11,31 @@
         ["no_melee_attack", "no_cavalry_defence"],
         ["no_lumber_camps", "delete_all_tcs"],
         ["no_mining_camps", "delete_all_tcs"],
-        ["delete_all_houses", "kill_vills_when_housed"]
+        ["delete_all_houses", "kill_vills_when_housed"],
+        ["make_elephants", "make_rams", "make_scorpions", "make_uu"],
+        ["make_scouts", "make_maa", "make_archers"],
+        ["no_loom", "instant_loom"],
+        ["make_scouts", "no_gold_units"],
+        ["make_maa", "no_gold_units"],
+        ["make_archers", "no_gold_units"],
+        ["make_elephants", "no_gold_units"],
+        ["make_rams", "no_gold_units"],
+        ["make_scorpions", "no_gold_units"],
+        ["make_uu", "no_gold_units"]
     ],
     "one-way-exclusive": {
-        "no_walls":           ["delete_all_walls"],
-        "no_selling_buying":  ["sell_all_x_resource"],
-        "no_castle":          ["no_uu", "no_unique_techs"],
-        "no_mining_camps":    ["no_mining_upgrades"],
-        "no_lumber_camps":    ["no_lumber_upgrades"],
-        "no_mills":           ["no_mill_upgrades"],
-        "no_market":          ["no_stone", "no_selling_buying", "sell_all_x_resource", "no_trade", "send_all_x_resource"],
-        "no_stable":          ["no_bloodlines", "no_elephants", "no_knights"],
-        "no_barracks":        ["no_eagles"],
-        "no_archery_range":   ["no_archers", "no_cav_archers"],
-        "no_university":      ["no_ballistics", "get_murder_holes"],
-        "no_monastery":       ["get_heresy", "deliver_relic"]
+        "no_walls":             ["delete_all_walls"],
+        "no_selling_buying":    ["sell_all_x_resource"],
+        "no_castle":            ["no_uu", "no_unique_techs"],
+        "no_mining_camps":      ["no_mining_upgrades"],
+        "no_lumber_camps":      ["no_lumber_upgrades"],
+        "no_mills":             ["no_mill_upgrades", "all_farms_must_touch_mill"],
+        "no_market":            ["no_stone", "no_selling_buying", "sell_all_x_resource", "no_trade", "send_all_x_resource"],
+        "no_stable":            ["no_bloodlines", "no_elephants", "no_knights"],
+        "no_barracks":          ["no_eagles"],
+        "no_archery_range":     ["no_archers", "no_cav_archers"],
+        "no_university":        ["no_ballistics", "get_murder_holes"],
+        "no_monastery":         ["get_heresy", "deliver_relic"]
     },
     "all-but-one": [
         ["Todo: Add this"]

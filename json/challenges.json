@@ -24,6 +24,11 @@
             "id": "no_sheep"
         },
         {
+            "name": "Send sheep to solo player",
+            "points": 3,
+            "id": "send_sheep_to_solo"
+        },
+        {
             "name": "No hunt",
             "points": 2
         },
@@ -38,12 +43,12 @@
         },
         {
             "name": "No lumbercamps",
-            "points": 5,
+            "points": 6,
             "id": "no_lumber_camps"
         },
         {
             "name": "No mills (except for 1)",
-            "points": 2,
+            "points": 3,
             "id": "no_mills"
         },
         {
@@ -52,7 +57,7 @@
         },
         {
             "name": "Kill % vills per age",
-            "points": 3,
+            "points": 2,
             "range": [
                 "10",
                 "20",
@@ -63,15 +68,29 @@
         },
         {
             "name": "Max vills in dark age",
-            "points": 4,
-            "range": [
-                18,
-                14
+            "points": 1,
+            "c-range": [
+                [
+                    1,
+                    "25"
+                ],
+                [
+                    2,
+                    "20"
+                ],
+                [
+                    4,
+                    "16"
+                ],
+                [
+                    8,
+                    "12"
+                ]
             ]
         },
         {
             "name": "No mining upgrades",
-            "points": 2,
+            "points": 1,
             "id": "no_mining_upgrades"
         },
         {
@@ -86,12 +105,12 @@
         },
         {
             "name": "No stone",
-            "points": 2,
+            "points": 3,
             "id": "no_stone"
         },
         {
             "name": "No selling/buying",
-            "points": 3,
+            "points": 4,
             "id": "no_selling_buying"
         },
         {
@@ -100,30 +119,24 @@
             "id": "no_trade"
         },
         {
-            "name": "Send sheep to solo player",
-            "points": 4,
-            "id": "send_sheep_to_solo"
-        },
-        {
-            "name": "No wheelbarrow",
+            "name": "No wheelbarrow line",
             "points": 2
         },
         {
             "name": "No loom",
-            "points": 5
-        },
-        {
-            "name": "Stragglers before lumbercamp",
-            "points": 1
+            "points": 5,
+            "id": "no_loom"
         },
         {
             "name": "All farms must touch a mill",
-            "points": 3
+            "points": 4,
+            "id": "all_farms_must_touch_mill"
         },
         {
             "name": "Max farms",
             "points": 2,
             "range": [
+                30,
                 20,
                 15,
                 10
@@ -138,12 +151,12 @@
         },
         {
             "name": "No trash units",
-            "points": 5,
+            "points": 6,
             "id": "no_trash"
         },
         {
             "name": "No unique unit",
-            "points": 2,
+            "points": 1,
             "id": "no_uu"
         },
         {
@@ -151,42 +164,142 @@
             "points": 3
         },
         {
-            "name": "One unit type per mil. building",
-            "points": 3
-        },
-        {
-            "name": "Only make 1 unit type in Feudal",
-            "points": 2
-        },
-        {
-            "name": "No eagles",
-            "points": 1,
-            "id": "no_eagles"
-        },
-        {
-            "name": "No elephants",
-            "points": 1,
-            "id": "no_elephants"
-        },
-        {
-            "name": "No knight line",
-            "points": 3,
-            "id": "no_knights"
-        },
-        {
-            "name": "No archer line",
-            "points": 3,
-            "id": "no_archers"
-        },
-        {
-            "name": "No cav-archers",
-            "points": 1,
-            "id": "no_cav_archers"
-        },
-        {
             "name": "No units from civ identity (tech-tree)",
-            "points": 5,
+            "points": 7,
             "id": "no_good_civ_units"
+        },
+        {
+            "name": "Make n scouts",
+            "points": 1,
+            "id": "make_scouts",
+            "c-range": [
+                [
+                    1,
+                    "3"
+                ],
+                [
+                    2,
+                    "5"
+                ],
+                [
+                    4,
+                    "10"
+                ]
+            ]
+        },
+        {
+            "name": "Make n man-at-arms",
+            "points": 1,
+            "id": "make_maa",
+            "c-range": [
+                [
+                    1,
+                    "3"
+                ],
+                [
+                    2,
+                    "5"
+                ],
+                [
+                    4,
+                    "15"
+                ]
+            ]
+        },
+        {
+            "name": "Make n archers",
+            "points": 1,
+            "id": "make_archers",
+            "c-range": [
+                [
+                    1,
+                    "5"
+                ],
+                [
+                    2,
+                    "10"
+                ],
+                [
+                    4,
+                    "20"
+                ]
+            ]
+        },
+        {
+            "name": "Make n elephants",
+            "points": 1,
+            "id": "make_elephants",
+            "c-range": [
+                [
+                    1,
+                    "3"
+                ],
+                [
+                    2,
+                    "8"
+                ],
+                [
+                    4,
+                    "20"
+                ]
+            ]
+        },
+        {
+            "name": "Make n rams",
+            "points": 1,
+            "id": "make_rams",
+            "c-range": [
+                [
+                    2,
+                    "3"
+                ],
+                [
+                    3,
+                    "5"
+                ],
+                [
+                    5,
+                    "7"
+                ]
+            ]
+        },
+        {
+            "name": "Make n scorpions",
+            "points": 1,
+            "id": "make_scorpions",
+            "c-range": [
+                [
+                    1,
+                    "3"
+                ],
+                [
+                    2,
+                    "5"
+                ],
+                [
+                    3,
+                    "10"
+                ]
+            ]
+        },
+        {
+            "name": "Make n castle unique units",
+            "points": 1,
+            "id": "make_uu",
+            "c-range": [
+                [
+                    2,
+                    "4"
+                ],
+                [
+                    3,
+                    "8"
+                ],
+                [
+                    4,
+                    "16"
+                ]
+            ]
         }
     ],
     "building": [
@@ -239,7 +352,8 @@
         },
         {
             "name": "No siege workshop",
-            "points": 4
+            "points": 4,
+            "id": "no_siege_workshop"
         },
         {
             "name": "No docks",
@@ -396,14 +510,27 @@
             "name": "Max pop",
             "points": 1,
             "id": "max_pop",
-            "c-range": [[2, "150"], [4, "100"], [7, "75"]]
+            "c-range": [
+                [
+                    2,
+                    "150"
+                ],
+                [
+                    4,
+                    "100"
+                ],
+                [
+                    7,
+                    "75"
+                ]
+            ]
         },
         {
             "name": "No scouting (except vills)",
             "points": 4
         },
         {
-            "name": "One player migrates to ally",
+            "name": "Migrate to ally",
             "points": 9,
             "id": "ally_migration"
         },
@@ -413,7 +540,8 @@
         },
         {
             "name": "Instant loom",
-            "points": 1
+            "points": 1,
+            "id": "instant_loom"
         },
         {
             "name": "Sacrifice 10 monks",

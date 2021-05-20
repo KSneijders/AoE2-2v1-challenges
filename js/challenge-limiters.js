@@ -1,4 +1,4 @@
-import {mutuallyExclusive, oneWayExclusive} from "./challenges.js";
+import {EXCLUDE} from "./challenges.js";
 import {getSelectedOptionValueInt, getTrField, setGettable} from "./helper.js";
 
 export function hasLimiter(ref) {
@@ -12,35 +12,19 @@ export function updateLimits(ref) {
     let field = getTrField(ref)
     // if (!field.is(':checked')) return   // --> Was this just a performance if ???
 
-    for (let mutuallyExclusiveEntry of mutuallyExclusive) {
-        if (mutuallyExclusiveEntry.includes(refId) && !field.is(':disabled')) {
-            for (let id of mutuallyExclusiveEntry) {
-                let otherRef = $('#'+id)
+    if (refId in EXCLUDE && !field.is(':disabled')) {
+        for (let id of EXCLUDE[refId]) {
+            let otherRef = $('#'+id)
 
-                let isUsed;
-                if (field[0].localName === "select") {
-                    isUsed = getSelectedOptionValueInt(field) > 0
-                } else {
-                    isUsed = field.is(':checked')
-                }
-
-                if (id !== refId && !getTrField(otherRef).is(':disabled')) {
-                    setGettable(otherRef, !isUsed, colors)
-                }
+            let isUsed;
+            if (field[0].localName === "select") {
+                isUsed = getSelectedOptionValueInt(field) > 0
+            } else {
+                isUsed = field.is(':checked')
             }
-        }
-    }
 
-    for (let oneWayHost in oneWayExclusive) {
-        if (refId === oneWayHost && !field.is(':disabled')) {
-            for (let id of oneWayExclusive[oneWayHost]) {
-                let otherRef = $('#'+id)
-                let otherField = getTrField(otherRef)
-                otherField.prop('checked', false)
-
-                if (id !== refId && !otherField.is(':disabled')) {
-                    setGettable(otherRef, !field.is(':checked'), colors)
-                }
+            if (id !== refId && !getTrField(otherRef).is(':disabled')) {
+                setGettable(otherRef, !isUsed, colors)
             }
         }
     }

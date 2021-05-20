@@ -1,6 +1,7 @@
 import {COLS, NON_WILDCOLS, WILDCOLS} from "../index.js";
 import {getSelectedOptionValueInt, setGettable, totalObjValueSum} from "./helper.js";
 import {hasLimiter, updateLimits} from "./challenge-limiters.js";
+import {challengeHeaderRow, challengeListTableRow, challengeListTableRowImageLess} from "./html-blobs.js";
 
 export const pointScore = {};
 export const maxPointScore = {};
@@ -144,27 +145,93 @@ function updatePointsView() {
 }
 
 function updateSelectedChallengesView() {
+    let creator = new ChallengeViewConstructor()
+
     let list = $('#challenge-list-body')
     list.html('')
-    let ul = $('<ul></ul>')
 
     $('#col-wrapper input:checked').each(function () {
-        let txt = $(this).parent().parent().find('td:nth-child(3)').text()
+        let tr = $(this).parent().parent()
+        let txt = tr.find('td:nth-child(3)').text()
+        let classes = tr.attr('classes')
 
+        let html;
         if ($(this).parents().eq(4).attr('coltype') === "commands" && txt !== "Choose civilisation") {
-            ul.append(`<li>Command: ||${txt}||</li>`)
+            html = `Command: ||${txt}||`
         } else {
-            ul.append(`<li>${txt}</li>`)
+            html = `${txt}`
         }
+
+        creator.addChallenge(html, classes)
     });
 
     $('#col-wrapper select option:selected').each(function () {
         if ($(this).attr('value') !== '0') {
-            let txt = $(this).parent().parent().parent().find('td:nth-child(3)').text()
-            ul.append(`<li>${txt} (${$(this).attr('effect')})</li>`)
+            let tr = $(this).parent().parent().parent()
+            let classes = tr.attr('classes')
+            let txt = tr.find('td:nth-child(3)').text()
+            let html = `${txt} (${$(this).attr('effect')})`
+
+            creator.addChallenge(html, classes)
         }
     });
-    list.append(ul)
+
+    let table = $('<table></table>')
+
+    for (let age of creator.classOrder) {
+        if (creator.challengeClassBased[age].length > 0) {
+            let text;
+            if (age === 'instant') {
+                text = age;
+            } else {
+                // let nextAge = creator.classOrder[creator.classOrder.indexOf(age) + 1]
+                text = `In ${age} Age`
+            }
+
+            table.append(challengeHeaderRow.replaceAll('{{TEXT}}', text))
+        }
+
+        for (let entry of creator.challengeClassBased[age]) {
+            table.append(challengeListTableRow
+                .replaceAll('{{TEXT}}', entry)
+                .replaceAll('{{IMAGE_SRC}}', `./assets/images/${age}.webp`))
+        }
+    }
+
+    table.append(challengeHeaderRow.replaceAll('{{TEXT}}', 'Other'))
+
+    for (let entry of creator.challenges) {
+        table.append(challengeListTableRowImageLess
+            .replaceAll('{{TEXT}}', entry['html']))
+    }
+    list.append(table)
+}
+
+class ChallengeViewConstructor {
+    classOrder = ['instant', 'dark', 'feudal', 'castle', 'imperial']
+
+    constructor() {
+        this.challenges = []
+        this.challengeClassBased = {}
+
+        for (let t of this.classOrder) {
+            this.challengeClassBased[t] = []
+        }
+    }
+
+    addChallenge(html, classes) {
+        if (classes) {
+            for (let cls of classes.split(' ')) {
+                if (this.classOrder.includes(cls)) {
+                    this.challengeClassBased[cls].push(html)
+                }
+            }
+        } else {
+            this.challenges.push({
+                html
+            })
+        }
+    }
 }
 
 function update() {

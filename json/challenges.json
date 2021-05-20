@@ -16,17 +16,26 @@
                     7,
                     "3"
                 ]
+            ],
+            "classes": [
+                "instant"
             ]
         },
         {
             "name": "No sheep",
             "points": 2,
-            "id": "no_sheep"
+            "id": "no_sheep",
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "Send sheep to solo player",
             "points": 3,
-            "id": "send_sheep_to_solo"
+            "id": "send_sheep_to_solo",
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "No hunt",
@@ -64,6 +73,9 @@
                 "30",
                 "40",
                 "50"
+            ],
+            "classes": [
+                "dark", "feudal", "castle"
             ]
         },
         {
@@ -86,6 +98,9 @@
                     8,
                     "12"
                 ]
+            ],
+            "classes": [
+                "dark"
             ]
         },
         {
@@ -125,7 +140,10 @@
         {
             "name": "No loom",
             "points": 5,
-            "id": "no_loom"
+            "id": "no_loom",
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "All farms must touch a mill",
@@ -161,7 +179,10 @@
         },
         {
             "name": "Delete starting scout",
-            "points": 3
+            "points": 3,
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "No units from civ identity (tech-tree)",
@@ -185,6 +206,9 @@
                     4,
                     "10"
                 ]
+            ],
+            "classes": [
+                "feudal"
             ]
         },
         {
@@ -204,6 +228,9 @@
                     4,
                     "15"
                 ]
+            ],
+            "classes": [
+                "feudal"
             ]
         },
         {
@@ -223,6 +250,9 @@
                     4,
                     "20"
                 ]
+            ],
+            "classes": [
+                "feudal"
             ]
         },
         {
@@ -242,6 +272,9 @@
                     4,
                     "20"
                 ]
+            ],
+            "classes": [
+                "castle"
             ]
         },
         {
@@ -261,6 +294,9 @@
                     5,
                     "7"
                 ]
+            ],
+            "classes": [
+                "castle"
             ]
         },
         {
@@ -280,6 +316,9 @@
                     3,
                     "10"
                 ]
+            ],
+            "classes": [
+                "castle"
             ]
         },
         {
@@ -299,6 +338,9 @@
                     4,
                     "16"
                 ]
+            ],
+            "classes": [
+                "castle"
             ]
         }
     ],
@@ -363,12 +405,18 @@
         {
             "name": "Instant 8 houses",
             "points": 3,
-            "id": "instant_8_houses"
+            "id": "instant_8_houses",
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "Instant barracks",
             "points": 2,
-            "id": "instant_barracks"
+            "id": "instant_barracks",
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "Make all possible buildings",
@@ -423,12 +471,18 @@
         {
             "name": "Get murder holes",
             "points": 1,
-            "id": "get_murder_holes"
+            "id": "get_murder_holes",
+            "classes": [
+                "castle"
+            ]
         },
         {
             "name": "Get heresy",
             "points": 3,
-            "id": "get_heresy"
+            "id": "get_heresy",
+            "classes": [
+                "castle"
+            ]
         }
     ],
     "miscellaneous": [
@@ -457,12 +511,18 @@
         },
         {
             "name": "No scouting (except vills)",
-            "points": 4
+            "points": 4,
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "Migrate to ally",
             "points": 9,
-            "id": "ally_migration"
+            "id": "ally_migration",
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "No relics",
@@ -471,12 +531,18 @@
         {
             "name": "Instant loom",
             "points": 1,
-            "id": "instant_loom"
+            "id": "instant_loom",
+            "classes": [
+                "instant"
+            ]
         },
         {
             "name": "Sacrifice 10 monks",
             "points": 4,
-            "id": "sacrifice_10_monks"
+            "id": "sacrifice_10_monks",
+            "classes": [
+                "castle"
+            ]
         },
         {
             "name": "Kill 5 vills each time housed",
@@ -524,6 +590,9 @@
                     4,
                     "400 gold"
                 ]
+            ],
+            "classes": [
+                "feudal"
             ]
         }
     ],

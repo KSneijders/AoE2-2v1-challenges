@@ -89,3 +89,11 @@ select {
 #generate-duo {
 
 }
+
+#challenge-list-body table tr:not(.header-row) {
+    user-select: none;
+}
+
+#challenge-list-body table tr:not(.header-row):hover {
+    cursor:pointer;
+}

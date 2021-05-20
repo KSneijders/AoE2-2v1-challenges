@@ -20,7 +20,7 @@
         "no_mills":             ["no_mill_upgrades", "all_farms_must_touch_mill"],
         "no_market":            ["no_stone", "sell_all_x_resource", "no_trade", "send_all_x_resource", "send_resource_to_solo"],
         "no_stable":            ["no_bloodlines", "no_elephants", "no_knights"],
-        "no_barracks":          ["no_eagles", "instant_barracks"],
+        "no_barracks":          ["instant_barracks", "make_maa"],
         "no_siege_workshop":    ["no_gold_units", "make_rams"],
         "no_archery_range":     ["no_archers", "no_cav_archers"],
         "no_university":        ["no_ballistics", "get_murder_holes"],

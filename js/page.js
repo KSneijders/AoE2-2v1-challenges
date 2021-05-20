@@ -39,14 +39,14 @@ export function buildPage() {
             let box;
             let pointText = challengesEntry.points
             if (challengesEntry['range'] || challengesEntry['c-range']) {
-                let customRange = challengesEntry.hasOwnProperty('c-range')
-                let key = customRange ? 'c-range' : 'range'
+                let hasCustomRange = challengesEntry.hasOwnProperty('c-range')
+                let key = hasCustomRange ? 'c-range' : 'range'
                 let points = []
 
-                box = '<select class="point-field" style="width: 60px"><option value="0">0</option>'
+                box = `<select class="point-field" style="width: 60px"><option value="0">0</option>`
                 for (let i = 0; i < challengesEntry[key].length; i++) {
                     let entry = challengesEntry[key][i]
-                    if (!customRange) {
+                    if (!hasCustomRange) {
                         let points = challengesEntry['points']
                         box += `<option effect="${entry}" value="${i + 1}">${entry}, ${points * (i + 1)}</option>`
                     } else {
@@ -57,7 +57,7 @@ export function buildPage() {
                 }
                 box += '</select>'
 
-                if (customRange) {
+                if (hasCustomRange) {
                     pointText = `${points[0]}+`
                 } else {
                     pointText += '<sup>x</sup>'
@@ -66,9 +66,13 @@ export function buildPage() {
                 box = `<input class="point-field" type="checkbox">`
             }
 
+            const hasClasses = challengesEntry.hasOwnProperty('classes')
+            let classes = (hasClasses ? challengesEntry['classes'] : []).join(' ')
+
             let attributes = ""
-            if (challengesEntry['id'])
-                attributes = `id="${challengesEntry['id']}"`
+            if (challengesEntry['id'])      attributes += ` id="${challengesEntry['id']}"`
+            if (hasClasses)                 attributes += ` classes="${classes}"`
+
             let tableRowString = tableRow
                 .replaceAll('{{CHECK}}', box)
                 .replaceAll('{{POINTS}}', challengesEntry['points'])

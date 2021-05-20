@@ -30,4 +30,30 @@ const pointNonTableRow =
         </b> <span class="points">??</span>/<span class="max-points">??</span> {{COMMENT}}
     </p>`
 
-export {htmlCol, tableRow, pointTableRow, pointTableRowInTdMax, pointNonTableRow}
+const challengeListTableRow =
+    `<tr>
+        <td><img style="width: 16px; height: 16px" src="{{IMAGE_SRC}}"></td>
+        <td>{{TEXT}}</td>
+    </tr>`
+
+const challengeListTableRowImageLess =
+    `<tr>
+        <td></td>
+        <td>{{TEXT}}</td>
+    </tr>`
+
+const challengeHeaderRow =
+    `<tr class="header-row">
+        <td colspan="2"><b><cap>{{TEXT}}</cap></b></td>
+    </tr>`
+
+export {
+    htmlCol,
+    tableRow,
+    pointTableRow,
+    pointTableRowInTdMax,
+    pointNonTableRow,
+    challengeListTableRow,
+    challengeListTableRowImageLess,
+    challengeHeaderRow
+}

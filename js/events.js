@@ -81,6 +81,17 @@ $(document).on('click', '#generate-solo', function () {
         addChooseCiv()
 });
 
+$(document).on('click', '#challenge-list-body table tr:not(.header-row)', function () {
+    const hasLineThrough = $(this).attr('line-through') === 'line-through'
+
+    if (hasLineThrough) {
+        $(this).css({'text-decoration': 'unset', 'color': '#000'})
+    } else {
+        $(this).css({'text-decoration': 'line-through', 'color': '#959595'})
+    }
+    $(this).attr('line-through', hasLineThrough ? '' : 'line-through')
+})
+
 function addChooseCiv() {
     let chooseCiv = tableRow
         .replaceAll('{{CHECK}}', '<input class="point-field" type="checkbox">')

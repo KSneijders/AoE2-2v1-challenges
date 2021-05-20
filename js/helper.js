@@ -117,7 +117,10 @@ export function selectRandomFromTrArray(trArray) {
             let options = pf.find('option:enabled').not('option[value="0"]')
             if (options.length !== 0) {
                 let option = getRandomFromArray(pf.find('option:enabled').not('option[value="0"]'))
-                pf.val($(option).val()).change()
+
+                pf.find('option:enabled').prop('selected', false)
+                $(option).prop('selected', true)
+                $(option).parent().change()
             }
         }
     }

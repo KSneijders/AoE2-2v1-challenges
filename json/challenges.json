@@ -20,7 +20,7 @@
         },
         {
             "name": "No sheep",
-            "points": 3,
+            "points": 2,
             "id": "no_sheep"
         },
         {
@@ -30,7 +30,7 @@
         },
         {
             "name": "No hunt",
-            "points": 2
+            "points": 1
         },
         {
             "name": "No forage bush",
@@ -356,10 +356,6 @@
             "id": "no_siege_workshop"
         },
         {
-            "name": "No docks",
-            "points": 3
-        },
-        {
             "name": "No market",
             "points": 6,
             "id": "no_market"
@@ -376,10 +372,6 @@
         },
         {
             "name": "Make all possible buildings",
-            "points": 4
-        },
-        {
-            "name": "All military buildings in one camp",
             "points": 4
         }
     ],
@@ -439,68 +431,6 @@
             "id": "get_heresy"
         }
     ],
-    "commands": [
-        {
-            "name": "Delete all forwards",
-            "points": 8
-        },
-        {
-            "name": "Delete all houses",
-            "points": 2,
-            "id": "delete_all_houses"
-        },
-        {
-            "name": "Send all of resource x",
-            "points": 4,
-            "id": "send_all_x_resource"
-        },
-        {
-            "name": "Delete all TCs (Feudal+)",
-            "points": 7,
-            "id": "delete_all_tcs"
-        },
-        {
-            "name": "Cancel all queues for 30s",
-            "points": 2
-        },
-        {
-            "name": "Delete all walls",
-            "points": 2,
-            "id": "delete_all_walls"
-        },
-        {
-            "name": "Create gap in wall at X",
-            "points": 1
-        },
-        {
-            "name": "Send all army to X",
-            "points": 3
-        },
-        {
-            "name": "Sell all of resource x",
-            "points": 1,
-            "id": "sell_all_x_resource"
-        },
-        {
-            "name": "All players delete all military",
-            "points": 4
-        },
-        {
-            "name": "Use 1 monk to deliver a relic",
-            "points": 1,
-            "id": "deliver_relic"
-        },
-        {
-            "name": "Even out vills",
-            "points": 6,
-            "id": "even_out_vills"
-        },
-        {
-            "name": "Even out military",
-            "points": 6,
-            "id": "even_out_military"
-        }
-    ],
     "miscellaneous": [
         {
             "name": "No laming",
@@ -545,12 +475,113 @@
         },
         {
             "name": "Sacrifice 10 monks",
-            "points": 4
+            "points": 4,
+            "id": "sacrifice_10_monks"
         },
         {
             "name": "Kill 5 vills each time housed",
             "points": 5,
             "id": "kill_vills_when_housed"
+        },
+        {
+            "name": "Send resources to solo player",
+            "points": 1,
+            "id": "send_resource_to_solo",
+            "c-range": [
+                [
+                    1,
+                    "100 food"
+                ],
+                [
+                    1,
+                    "100 wood"
+                ],
+                [
+                    1,
+                    "100 gold"
+                ],
+                [
+                    2,
+                    "100 stone"
+                ],
+                [
+                    2,
+                    "200 gold"
+                ],
+                [
+                    4,
+                    "200 stone"
+                ],
+                [
+                    3,
+                    "400 food"
+                ],
+                [
+                    3,
+                    "400 wood"
+                ],
+                [
+                    4,
+                    "400 gold"
+                ]
+            ]
+        }
+    ],
+    "commands": [
+        {
+            "name": "Delete all forwards",
+            "points": 8
+        },
+        {
+            "name": "Delete all houses",
+            "points": 2,
+            "id": "delete_all_houses"
+        },
+        {
+            "name": "Send all of resource x",
+            "points": 3,
+            "id": "send_all_x_resource"
+        },
+        {
+            "name": "Delete all TCs (Feudal+)",
+            "points": 7,
+            "id": "delete_all_tcs"
+        },
+        {
+            "name": "Cancel all queues for 30s",
+            "points": 2
+        },
+        {
+            "name": "Delete all walls",
+            "points": 2,
+            "id": "delete_all_walls"
+        },
+        {
+            "name": "Create gap in wall at X",
+            "points": 1
+        },
+        {
+            "name": "Send all army to X",
+            "points": 3
+        },
+        {
+            "name": "Sell all of resource x",
+            "points": 1,
+            "id": "sell_all_x_resource"
+        },
+        {
+            "name": "All players delete all military",
+            "points": 5
+        },
+        {
+            "name": "Even out vills",
+            "points": 6,
+            "id": "even_out_vills"
+        },
+        {
+            "name": "Even out military",
+            "points": 6,
+            "id": "even_out_military"
         }
     ]
 }

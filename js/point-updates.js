@@ -198,6 +198,9 @@ function updateSelectedChallengesView() {
         }
     }
 
+    list.append(table)
+
+    table = $('<table></table>')
     table.append(challengeHeaderRow.replaceAll('{{TEXT}}', 'Other'))
 
     for (let entry of creator.challenges) {

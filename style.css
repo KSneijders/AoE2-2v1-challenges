@@ -90,6 +90,12 @@ select {
 
 }
 
+#challenge-list-body table {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px
+}
+
 #challenge-list-body table tr:not(.header-row) {
     user-select: none;
 }

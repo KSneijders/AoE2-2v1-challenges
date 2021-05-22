@@ -38,7 +38,7 @@ const challengeListTableRow =
 
 const challengeListTableRowImageLess =
     `<tr>
-        <td></td>
+        <td style="width: 16px;"></td>
         <td>{{TEXT}}</td>
     </tr>`
 

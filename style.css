@@ -97,7 +97,7 @@ select {
 }
 
 #challenge-list-body table tr:not(.header-row) {
-    user-select: none;
+    /* user-select: none; */
 }
 
 #challenge-list-body table tr:not(.header-row):hover {

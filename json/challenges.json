@@ -138,14 +138,6 @@
             "points": 2
         },
         {
-            "name": "No loom",
-            "points": 5,
-            "id": "no_loom",
-            "classes": [
-                "instant"
-            ]
-        },
-        {
             "name": "All farms must touch a mill",
             "points": 4,
             "id": "all_farms_must_touch_mill"
@@ -482,6 +474,14 @@
             "id": "get_heresy",
             "classes": [
                 "castle"
+            ]
+        },
+        {
+            "name": "No loom",
+            "points": 5,
+            "id": "no_loom",
+            "classes": [
+                "instant"
             ]
         }
     ],

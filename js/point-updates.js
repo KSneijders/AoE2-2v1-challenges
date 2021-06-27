@@ -157,7 +157,7 @@ function updateSelectedChallengesView() {
 
         let html;
         if ($(this).parents().eq(4).attr('coltype') === "commands" && txt !== "Choose civilisation") {
-            html = `Command: ||${txt}||`
+            html = `Command: ${txt}`
         } else {
             html = `${txt}`
         }
@@ -170,7 +170,19 @@ function updateSelectedChallengesView() {
             let tr = $(this).parent().parent().parent()
             let classes = tr.attr('classes')
             let txt = tr.find('td:nth-child(3)').text()
-            let html = `${txt} (${$(this).attr('effect')})`
+
+            let html;
+            if ($(this).parents().eq(5).attr('coltype') === "commands") {
+                let effect = $(this).attr('effect')
+                html = `Command: ${txt} (${effect})`
+
+                let repeat = parseInt(effect[0])
+                for (let i = 0; i < repeat; i++) {
+                    html += `<input style="float: right" type="checkbox"/>`
+                }
+            } else {
+                html = `${txt} (${$(this).attr('effect')})`
+            }
 
             creator.addChallenge(html, classes)
         }

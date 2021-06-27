@@ -81,33 +81,53 @@ $(document).on('click', '#generate-solo', function () {
         addChooseCiv()
 });
 
-$(document).on('click', '#challenge-list-body table tr:not(.header-row) input[type=checkbox]', function (e) {
-    let parent = $(this).parent().parent()
-
-    const allChecked = parent.find('input[type=checkbox]').length
-        === parent.find('input[type=checkbox]:checked').length
-
-    if (allChecked) {
-        parent.css({'text-decoration': 'line-through', 'color': '#959595'})
-        parent.attr('line-through', 'true')
-    } else {
-        parent.css({'text-decoration': 'unset', 'color': '#000'})
-        parent.attr('line-through', 'false')
-    }
-    e.stopPropagation();
-});
+// $(document).on('click', '#challenge-list-body table tr:not(.header-row) input[type=checkbox]', function (e) {
+//     let parent = $(this).parent().parent()
+//
+//     const allChecked = parent.find('input[type=checkbox]').length
+//         === parent.find('input[type=checkbox]:checked').length
+//
+//     if (allChecked) {
+//         parent.css({'text-decoration': 'line-through', 'color': '#959595'})
+//         parent.attr('line-through', 'true')
+//     } else {
+//         parent.css({'text-decoration': 'unset', 'color': '#000'})
+//         parent.attr('line-through', 'false')
+//     }
+//     e.stopPropagation();
+// });
 
 $(document).on('click', '#challenge-list-body table tr:not(.header-row)', function () {
-    const hasLineThrough = $(this).attr('line-through') === 'true'
+    if ($(this).find('input[type=checkbox]').length === 0) {
+        const hasLineThrough = $(this).attr('line-through') === 'true'
 
-    if (hasLineThrough) {
+        if (!hasLineThrough) {
+            $(this).css({'text-decoration': 'line-through', 'color': '#959595'})
+            $(this).attr('line-through', 'true')
+        } else {
+            $(this).attr('line-through', 'false')
+            $(this).css({'text-decoration': 'unset', 'color': '#000'})
+        }
+        return
+    }
+
+    let allChecked = $(this).find('input[type=checkbox]').length === $(this).find('input[type=checkbox]:checked').length
+
+    if (allChecked) {
         $(this).find('input[type=checkbox]').prop({'checked': false})
+    } else {
+        let inputs = $(this).find('input[type=checkbox]:not(:checked)')
+        $(inputs[inputs.length - 1]).prop({'checked': true})
+    }
+
+    allChecked = $(this).find('input[type=checkbox]').length === $(this).find('input[type=checkbox]:checked').length
+
+    if (allChecked) {
+        $(this).css({'text-decoration': 'line-through', 'color': '#959595'})
+        $(this).attr('line-through', 'true')
+    } else {
         $(this).attr('line-through', 'false')
         $(this).css({'text-decoration': 'unset', 'color': '#000'})
-    } else {
-        $(this).css({'text-decoration': 'line-through', 'color': '#959595'})
-        $(this).find('input[type=checkbox]').prop({'checked': true})
-        $(this).attr('line-through', 'true')
     }
 })
 

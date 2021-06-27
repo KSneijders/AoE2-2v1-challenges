@@ -96,10 +96,19 @@ select {
     margin: 0 10px
 }
 
+#challenge-list-body table tr td {
+    padding: 4px;
+}
+
 #challenge-list-body table tr:not(.header-row) {
-    /* user-select: none; */
+     user-select: none;
 }
 
 #challenge-list-body table tr:not(.header-row):hover {
     cursor:pointer;
+}
+
+td.highlighted {
+    font-weight: bold;
+    color: #44F;
 }

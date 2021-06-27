@@ -1,7 +1,12 @@
 import {COLS, NON_WILDCOLS, WILDCOLS} from "../index.js";
 import {getSelectedOptionValueInt, setGettable, totalObjValueSum} from "./helper.js";
 import {hasLimiter, updateLimits} from "./challenge-limiters.js";
-import {challengeHeaderRow, challengeListTableRow, challengeListTableRowImageLess} from "./html-blobs.js";
+import {
+    challengeHeaderRow,
+    challengeListTableRow,
+    challengeListTableRowHighlightImageLess,
+    challengeListTableRowImageLess
+} from "./html-blobs.js";
 
 export const pointScore = {};
 export const maxPointScore = {};
@@ -190,8 +195,8 @@ function updateSelectedChallengesView() {
 
     let table = $('<table></table>')
 
-    for (let age of creator.classOrder) {
-        if (creator.challengeClassBased[age].length > 0) {
+    for (let age of creator.ageOrder) {
+        if (creator.challengeAgeBased[age].length > 0) {
             let text;
             if (age === 'instant') {
                 text = age;
@@ -203,7 +208,7 @@ function updateSelectedChallengesView() {
             table.append(challengeHeaderRow.replaceAll('{{TEXT}}', text))
         }
 
-        for (let entry of creator.challengeClassBased[age]) {
+        for (let entry of creator.challengeAgeBased[age]) {
             table.append(challengeListTableRow
                 .replaceAll('{{TEXT}}', entry)
                 .replaceAll('{{IMAGE_SRC}}', `./assets/images/${age}.webp`))
@@ -215,6 +220,11 @@ function updateSelectedChallengesView() {
     table = $('<table></table>')
     table.append(challengeHeaderRow.replaceAll('{{TEXT}}', 'Other'))
 
+    for (let entry of creator.challengeGameChanging) {
+        table.append(challengeListTableRowHighlightImageLess
+            .replaceAll('{{TEXT}}', entry['html']))
+    }
+
     for (let entry of creator.challenges) {
         table.append(challengeListTableRowImageLess
             .replaceAll('{{TEXT}}', entry['html']))
@@ -223,29 +233,38 @@ function updateSelectedChallengesView() {
 }
 
 class ChallengeViewConstructor {
-    classOrder = ['instant', 'dark', 'feudal', 'castle', 'imperial']
+    ageOrder = ['instant', 'dark', 'feudal', 'castle', 'imperial']
 
     constructor() {
         this.challenges = []
-        this.challengeClassBased = {}
+        this.challengeGameChanging = []
+        this.challengeAgeBased = {}
 
-        for (let t of this.classOrder) {
-            this.challengeClassBased[t] = []
+        for (let t of this.ageOrder) {
+            this.challengeAgeBased[t] = []
         }
     }
 
     addChallenge(html, classes) {
         if (classes) {
+            let addedAges = false;
             for (let cls of classes.split(' ')) {
-                if (this.classOrder.includes(cls)) {
-                    this.challengeClassBased[cls].push(html)
+                if (this.ageOrder.includes(cls)) {
+                    this.challengeAgeBased[cls].push(html)
+                    addedAges = true
                 }
             }
-        } else {
-            this.challenges.push({
-                html
-            })
+            if (addedAges) return
+
+            if (classes.includes('game-changing')) {
+                this.challengeGameChanging.push({html})
+                return;
+            }
         }
+
+        this.challenges.push({
+            html
+        })
     }
 }
 

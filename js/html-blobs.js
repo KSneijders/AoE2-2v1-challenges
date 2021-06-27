@@ -42,6 +42,12 @@ const challengeListTableRowImageLess =
         <td>{{TEXT}}</td>
     </tr>`
 
+const challengeListTableRowHighlightImageLess =
+    `<tr>
+        <td style="width: 16px;"></td>
+        <td class="highlighted">{{TEXT}}</td>
+    </tr>`
+
 const challengeHeaderRow =
     `<tr class="header-row">
         <td colspan="2"><b><cap>{{TEXT}}</cap></b></td>
@@ -55,5 +61,6 @@ export {
     pointNonTableRow,
     challengeListTableRow,
     challengeListTableRowImageLess,
+    challengeListTableRowHighlightImageLess,
     challengeHeaderRow
 }

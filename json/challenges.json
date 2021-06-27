@@ -104,6 +104,7 @@
         },
         {
             "name": "All farms must touch a mill",
+            "comment": "Farms don't have to actually touch the mill. Just max of 4 per mill and none at TC.",
             "points": 5,
             "id": "all_farms_must_touch_mill"
         },
@@ -117,12 +118,18 @@
         {
             "name": "No gold units (except siege)",
             "points": 9,
-            "id": "no_gold_units"
+            "id": "no_gold_units",
+            "classes": [
+                "game-changing"
+            ]
         },
         {
             "name": "No trash units",
             "points": 6,
-            "id": "no_trash"
+            "id": "no_trash",
+            "classes": [
+                "game-changing"
+            ]
         },
         {
             "name": "No unique castle unit",
@@ -139,7 +146,10 @@
         {
             "name": "No units from civ identity",
             "points": 7,
-            "id": "no_good_civ_units"
+            "id": "no_good_civ_units",
+            "classes": [
+                "game-changing"
+            ]
         },
         {
             "name": "Make n scouts",
@@ -295,7 +305,10 @@
     "building": [
         {
             "name": "Every building twice",
-            "points": 8
+            "points": 8,
+            "classes": [
+                "game-changing"
+            ]
         },
         {
             "name": "No walls",
@@ -459,6 +472,9 @@
                     7,
                     "75"
                 ]
+            ],
+            "classes": [
+                "game-changing"
             ]
         },
         {

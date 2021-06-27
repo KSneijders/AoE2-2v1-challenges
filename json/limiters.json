@@ -24,7 +24,8 @@
         "no_siege_workshop":    ["no_gold_units", "make_rams"],
         "no_archery_range":     ["no_archers", "no_cav_archers"],
         "no_university":        ["no_ballistics", "get_murder_holes"],
-        "no_monastery":         ["get_heresy", "sacrifice_10_monks"]
+        "no_monastery":         ["get_heresy", "sacrifice_10_monks"],
+        "no_eco_upgrades":      ["no_mining_upgrades", "no_lumber_upgrades", "no_mill_upgrades"]
     },
     "all-but-one": [
         ["Todo: Add this"]

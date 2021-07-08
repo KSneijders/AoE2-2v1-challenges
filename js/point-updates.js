@@ -61,7 +61,7 @@ function updatePointDistribution() {
     let spendableWildPoints = getSpendableWildPoints()
 
     maxPointScore['commands'] = points + spendableWildPoints
-    maxPointScore['miscellaneous'] = points + spendableWildPoints
+    // maxPointScore['miscellaneous'] = points + spendableWildPoints
 
     wildPoints['points'] = wildPoint
 }

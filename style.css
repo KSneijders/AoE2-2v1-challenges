@@ -112,3 +112,19 @@ td.highlighted {
     font-weight: bold;
     color: #44F;
 }
+
+sup.info {
+    user-select: none;
+    margin-left: 3px;
+    padding: 0 2px 2px 2px;
+    /*background-color: #717171;*/
+    border-width: 1px;
+    border-style: solid;
+    font-weight: bolder;
+    font-family: Consolas, serif;
+    text-align: center;
+    display: inline-block;
+    border-radius: 100px;
+    /*width: 1em;*/
+    height: 1em;
+}

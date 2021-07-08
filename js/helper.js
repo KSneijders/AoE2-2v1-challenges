@@ -80,7 +80,7 @@ export function setGettable(tr, affordable, colors = null) {
     let field = tr.find('.point-field')
 
     field.prop("disabled", !affordable)
-    tr.css({'color': colors[affordable]})
+    tr.css({'color': colors[affordable], "border-color": colors[affordable]})
 }
 
 export function startRandom() {

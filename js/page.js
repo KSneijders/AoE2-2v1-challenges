@@ -70,14 +70,18 @@ export function buildPage() {
             let classes = (hasClasses ? challengesEntry['classes'] : []).join(' ')
 
             let attributes = ""
+            let name = challengesEntry['name']
+
             if (challengesEntry['id'])      attributes += ` id="${challengesEntry['id']}"`
             if (hasClasses)                 attributes += ` classes="${classes}"`
+
+            if (challengesEntry['comment']) name += `<sup title="${challengesEntry['comment']}" class='info'>i</sup>`
 
             let tableRowString = tableRow
                 .replaceAll('{{CHECK}}', box)
                 .replaceAll('{{POINTS}}', challengesEntry['points'])
                 .replaceAll('{{POINTS_TEXT}}', pointText)
-                .replaceAll('{{NAME}}', challengesEntry['name'])
+                .replaceAll('{{NAME}}', name)
                 .replaceAll('{{ATTRIBUTES}}', attributes)
             table.append(tableRowString)
         }

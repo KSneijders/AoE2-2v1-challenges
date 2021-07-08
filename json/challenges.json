@@ -11,6 +11,7 @@
         },
         {
             "name": "No sheep",
+            "comment": "Your ally is not allowed to get your sheep either! Go scouting!",
             "points": 2,
             "id": "no_sheep",
             "classes": [
@@ -27,6 +28,7 @@
         },
         {
             "name": "No hunt",
+            "comment": "Your ally is not allowed to hunt your hunt either!",
             "points": 2
         },
         {
@@ -55,7 +57,7 @@
         {
             "name": "Kill % vills per age",
             "points": 1,
-            "c-range": [[4,"25"],[10,"50"]],
+            "c-range": [[4,"20"],[10,"40"]],
             "classes": [
                 "dark", "feudal", "castle"
             ]
@@ -313,15 +315,21 @@
         {
             "name": "No walls",
             "points": 4,
-            "id": "no_walls"
+            "id": "no_walls",
+            "classes": [
+                "game-changing"
+            ]
         },
         {
             "name": "Leave gaps between walls",
-            "points": 3
+            "points": 3,
+            "classes": [
+                "game-changing"
+            ]
         },
         {
             "name": "No towers / donjons",
-            "points": 1
+            "points": 3
         },
         {
             "name": "No barracks",
@@ -572,6 +580,7 @@
         },
         {
             "name": "Send all of resource x",
+            "comment": "If a duo player does not have a market, he has to build one. Unless they're not allowed to.",
             "points": 1,
             "id": "send_all_x_resource",
             "c-range": [
@@ -620,17 +629,6 @@
                 [1, "1x"],
                 [2, "2x"],
                 [3, "3x"]
-            ]
-        },
-        {
-            "name": "Sell all of resource x",
-            "points": 1,
-            "dev-comment": "1, 2, 2 points intentional",
-            "id": "sell_all_x_resource",
-            "c-range": [
-                [1, "1x"],
-                [2, "2x"],
-                [2, "3x"]
             ]
         },
         {

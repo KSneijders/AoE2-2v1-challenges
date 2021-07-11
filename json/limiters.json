@@ -5,7 +5,8 @@
         ["instant_8_houses", "instant_barracks", "ally_migration"],
         ["delete_all_houses", "kill_vills_when_housed"],
         ["make_elephants", "make_rams", "make_scorpions", "make_uu"],
-        ["make_scouts", "make_maa", "make_archers"]
+        ["make_scouts", "make_maa", "make_archers"],
+        ["delete_starting_scout", "no_scouting"]
     ],
     "one-way-exclusive": {
         "no_melee_attack":      ["no_infantry_defence", "no_cavalry_defence"],

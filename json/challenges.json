@@ -141,6 +141,7 @@
         {
             "name": "Delete starting scout",
             "points": 3,
+            "id": "delete_starting_scout",
             "classes": [
                 "instant"
             ]
@@ -488,6 +489,8 @@
         {
             "name": "No scouting (except vills)",
             "points": 4,
+            "comment": "You",
+            "id": "no_scouting",
             "classes": [
                 "instant"
             ]
@@ -574,8 +577,7 @@
             "id": "delete_all_houses",
             "c-range": [
                 [2, "1x"],
-                [4, "2x"],
-                [6, "3x"]
+                [4, "2x"]
             ]
         },
         {
@@ -591,7 +593,7 @@
         },
         {
             "name": "Delete all TCs (Feudal+)",
-            "points": 7,
+            "points": 5,
             "id": "delete_all_tcs"
         },
         {
@@ -599,8 +601,7 @@
             "points": 1,
             "c-range": [
                 [2, "1x"],
-                [4, "2x"],
-                [6, "3x"]
+                [4, "2x"]
             ]
         },
         {
@@ -609,8 +610,7 @@
             "id": "delete_all_walls",
             "c-range": [
                 [2, "1x"],
-                [4, "2x"],
-                [6, "3x"]
+                [4, "2x"]
             ]
         },
         {
@@ -663,6 +663,33 @@
             "c-range": [
                 [2, "1x"],
                 [3, "2x"]
+            ]
+        },
+        {
+            "name": "Deny a specific unit",
+            "points": 1,
+            "comment": "This denies a single unit. If you already made such units, they are no longer allowed to fight (non attack stance). You are no longer allowed to create the unit either. BUT, if you do an upgrade which changes the unit (e.g. spearman to pikeman or non-elite to elite) you can create and use them again. Unless they block that unit too 11",
+            "c-range": [
+                [2, "1x"],
+                [4, "2x"]
+            ]
+        },
+        {
+            "name": "Delete all buildings of type",
+            "comment": "Delete any building of a certain type. Exceptions are castles (krepost), towers (donjon) and TCs.",
+            "points": 1,
+            "c-range": [
+                [3, "1x"],
+                [5, "2x"]
+            ]
+        },
+        {
+            "name": "Kill 30/40/50% vills (Feudal+)",
+            "comment": "When called, Feudal players delete 30% of vills. Castle players delete 40% and Imp players delete 50% of their villager population",
+            "points": 1,
+            "c-range": [
+                [5, "1x"],
+                [8, "2x"]
             ]
         }
     ]

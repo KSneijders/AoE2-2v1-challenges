@@ -160,14 +160,14 @@ function updateSelectedChallengesView() {
         let txt = tr.find('td:nth-child(3)').text()
         let classes = tr.attr('classes')
 
-        let html;
-        if ($(this).parents().eq(4).attr('coltype') === "commands" && txt !== "Choose civilisation") {
-            html = `Command: ${txt}`
-        } else {
-            html = `${txt}`
-        }
+        // let html;
+        // if ($(this).parents().eq(4).attr('coltype') === "commands" && txt !== "Choose civilisation") {
+        //     html = `Command: ${txt}`
+        // } else {
+        //     html = `${txt}`
+        // }
 
-        creator.addChallenge(html, classes)
+        creator.addChallenge(txt, classes)
     });
 
     $('#col-wrapper select option:selected').each(function () {
@@ -179,7 +179,7 @@ function updateSelectedChallengesView() {
             let html;
             if ($(this).parents().eq(5).attr('coltype') === "commands") {
                 let effect = $(this).attr('effect')
-                html = `Command: ${txt} (${effect})`
+                html = `${txt} (${effect})`
 
                 let repeat = parseInt(effect[0])
                 for (let i = 0; i < repeat; i++) {

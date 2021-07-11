@@ -74,8 +74,9 @@ export function buildPage() {
 
             if (challengesEntry['id'])      attributes += ` id="${challengesEntry['id']}"`
             if (hasClasses)                 attributes += ` classes="${classes}"`
+            if (challengesEntry['comment']) attributes += ` title="${challengesEntry['comment']}"`
 
-            if (challengesEntry['comment']) name += `<sup title="${challengesEntry['comment']}" class='info'>i</sup>`
+            // if (challengesEntry['comment']) name += `<sup  class='info'>i</sup>`
 
             let tableRowString = tableRow
                 .replaceAll('{{CHECK}}', box)

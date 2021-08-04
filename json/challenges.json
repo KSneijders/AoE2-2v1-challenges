@@ -58,6 +58,7 @@
             "name": "Kill % vills per age",
             "points": 1,
             "c-range": [[4,"20"],[10,"40"]],
+            "id": "kill_vills_per_age",
             "classes": [
                 "dark", "feudal", "castle"
             ]
@@ -66,6 +67,7 @@
             "name": "Max vills in dark age",
             "points": 1,
             "c-range": [[1,"20"],[2,"15"],[4,"12"]],
+            "id": "max_vills_in_dark_age",
             "classes": [
                 "dark"
             ]

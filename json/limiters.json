@@ -6,7 +6,8 @@
         ["delete_all_houses", "kill_vills_when_housed"],
         ["make_elephants", "make_rams", "make_scorpions", "make_uu"],
         ["make_scouts", "make_maa", "make_archers"],
-        ["delete_starting_scout", "no_scouting"]
+        ["delete_starting_scout", "no_scouting"],
+        ["kill_vills_per_age", "max_vills_in_dark_age"]
     ],
     "one-way-exclusive": {
         "no_melee_attack":      ["no_infantry_defence", "no_cavalry_defence"],

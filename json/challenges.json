@@ -332,7 +332,7 @@
         },
         {
             "name": "No towers / donjons",
-            "points": 3
+            "points": 4
         },
         {
             "name": "No barracks",
@@ -499,7 +499,7 @@
         },
         {
             "name": "Migrate to ally",
-            "points": 6,
+            "points": 7,
             "id": "ally_migration",
             "classes": [
                 "instant"

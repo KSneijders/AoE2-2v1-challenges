@@ -6,7 +6,7 @@
         ["delete_all_houses", "kill_vills_when_housed"],
         ["make_elephants", "make_rams", "make_scorpions", "make_uu"],
         ["make_scouts", "make_maa", "make_archers"],
-        ["delete_starting_scout", "no_scouting"],
+        ["delete_starting_scout", "no_scouting", "only_auto_scout"],
         ["kill_vills_per_age", "max_vills_in_dark_age"]
     ],
     "one-way-exclusive": {

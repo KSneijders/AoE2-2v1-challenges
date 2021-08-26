@@ -157,6 +157,24 @@
             ]
         },
         {
+            "name": "Make n militia",
+            "points": 1,
+            "id": "make_militia",
+            "c-range": [
+                [
+                    1,
+                    "5"
+                ],
+                [
+                    3,
+                    "10"
+                ]
+            ],
+            "classes": [
+                "dark"
+            ]
+        },
+        {
             "name": "Make n scouts",
             "points": 1,
             "id": "make_scouts",
@@ -225,6 +243,7 @@
         {
             "name": "Make n elephants",
             "points": 1,
+            "comment": "Create twice the amount of light cav if your civ doesn't have elephants",
             "id": "make_elephants",
             "c-range": [
                 [
@@ -491,8 +510,15 @@
         {
             "name": "No scouting (except vills)",
             "points": 4,
-            "comment": "You",
             "id": "no_scouting",
+            "classes": [
+                "instant"
+            ]
+        },
+        {
+            "name": "Only auto-scout",
+            "points": 1,
+            "id": "only_auto_scout",
             "classes": [
                 "instant"
             ]
@@ -692,6 +718,39 @@
             "c-range": [
                 [5, "1x"],
                 [8, "2x"]
+            ]
+        },
+        {
+            "name": "Force age requirements",
+            "comment": "You cannot add anything to the global queue that does not work towards your given age requirements until all of them are done.",
+            "points": 2
+        },
+        {
+            "name": "Delete all flagged buildings (Feudal+)",
+            "points": 4
+        },
+        {
+            "name": "Request information",
+            "comment": "Send an image of the top of your screen. This has to include all 4 resources, pop & villager count, the age bar, your production queue",
+            "points": 1
+        },
+        {
+            "name": "Ping TCs",
+            "comment": "REMEMBER to change ALT-T. X all TCs you have!",
+            "points": 1
+        },
+        {
+            "name": "Delete all farms & eco buildings",
+            "comment": "Lumber camps, Mills, Mining camps and Farms",
+            "points": 4
+        },
+        {
+            "name": "Send all vills to resources for x seconds",
+            "comment": "Send all vills to a resource",
+            "points": 1,
+            "c-range": [
+                [2, "30s"],
+                [4, "60s"]
             ]
         }
     ]

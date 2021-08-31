@@ -121,7 +121,7 @@
     "military": [
         {
             "name": "No gold units (except siege)",
-            "points": 9,
+            "points": 8,
             "id": "no_gold_units",
             "classes": [
                 "game-changing"
@@ -129,7 +129,7 @@
         },
         {
             "name": "No trash units",
-            "points": 6,
+            "points": 5,
             "id": "no_trash",
             "classes": [
                 "game-changing"
@@ -142,7 +142,7 @@
         },
         {
             "name": "Delete starting scout",
-            "points": 3,
+            "points": 2,
             "id": "delete_starting_scout",
             "classes": [
                 "instant"
@@ -150,28 +150,10 @@
         },
         {
             "name": "No units from civ identity",
-            "points": 7,
+            "points": 5,
             "id": "no_good_civ_units",
             "classes": [
                 "game-changing"
-            ]
-        },
-        {
-            "name": "Make n militia",
-            "points": 1,
-            "id": "make_militia",
-            "c-range": [
-                [
-                    1,
-                    "5"
-                ],
-                [
-                    3,
-                    "10"
-                ]
-            ],
-            "classes": [
-                "dark"
             ]
         },
         {
@@ -181,15 +163,11 @@
             "c-range": [
                 [
                     1,
-                    "3"
+                    "5"
                 ],
                 [
                     2,
-                    "6"
-                ],
-                [
-                    4,
-                    "10"
+                    "8"
                 ]
             ],
             "classes": [
@@ -208,10 +186,6 @@
                 [
                     2,
                     "6"
-                ],
-                [
-                    4,
-                    "15"
                 ]
             ],
             "classes": [
@@ -225,42 +199,15 @@
             "c-range": [
                 [
                     1,
-                    "5"
+                    "6"
                 ],
                 [
                     2,
-                    "10"
-                ],
-                [
-                    4,
-                    "20"
+                    "12"
                 ]
             ],
             "classes": [
                 "feudal"
-            ]
-        },
-        {
-            "name": "Make n elephants",
-            "points": 1,
-            "comment": "Create twice the amount of light cav if your civ doesn't have elephants",
-            "id": "make_elephants",
-            "c-range": [
-                [
-                    1,
-                    "3"
-                ],
-                [
-                    2,
-                    "8"
-                ],
-                [
-                    4,
-                    "20"
-                ]
-            ],
-            "classes": [
-                "castle"
             ]
         },
         {
@@ -269,15 +216,15 @@
             "id": "make_rams",
             "c-range": [
                 [
-                    3,
+                    2,
                     "3"
                 ],
                 [
-                    4,
+                    3,
                     "5"
                 ],
                 [
-                    5,
+                    4,
                     "7"
                 ]
             ],
@@ -291,15 +238,15 @@
             "id": "make_scorpions",
             "c-range": [
                 [
-                    3,
+                    1,
                     "3"
                 ],
                 [
-                    4,
+                    2,
                     "5"
                 ],
                 [
-                    6,
+                    4,
                     "10"
                 ]
             ],

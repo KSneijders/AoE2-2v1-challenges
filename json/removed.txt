@@ -1,0 +1,42 @@
+{
+    "name": "Make n militia",
+    "points": 1,
+    "id": "make_militia",
+    "c-range": [
+        [
+            1,
+            "5"
+        ],
+        [
+            3,
+            "10"
+        ]
+    ],
+    "classes": [
+        "dark"
+    ]
+},
+
+{
+    "name": "Make n elephants",
+    "points": 1,
+    "comment": "Create twice the amount of light cav if your civ doesn't have elephants",
+    "id": "make_elephants",
+    "c-range": [
+        [
+            1,
+            "3"
+        ],
+        [
+            2,
+            "8"
+        ],
+        [
+            4,
+            "20"
+        ]
+    ],
+    "classes": [
+        "castle"
+    ]
+},

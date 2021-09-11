@@ -7,7 +7,8 @@
             "c-range": [[4, "2"], [6, "3"]],
             "classes": [
                 "instant"
-            ]
+            ],
+            "id": "delete_starting_vills"
         },
         {
             "name": "No sheep",
@@ -411,14 +412,6 @@
             ]
         },
         {
-            "name": "Get heresy",
-            "points": 3,
-            "id": "get_heresy",
-            "classes": [
-                "castle"
-            ]
-        },
-        {
             "name": "No loom",
             "points": 4,
             "id": "no_loom",
@@ -428,10 +421,6 @@
         }
     ],
     "miscellaneous": [
-        {
-            "name": "No laming",
-            "points": 1
-        },
         {
             "name": "Max pop",
             "points": 1,

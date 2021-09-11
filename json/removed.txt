@@ -40,3 +40,17 @@
         "castle"
     ]
 },
+
+{
+    "name": "Get heresy",
+    "points": 3,
+    "id": "get_heresy",
+    "classes": [
+        "castle"
+    ]
+},
+
+{
+    "name": "No laming",
+    "points": 1
+},

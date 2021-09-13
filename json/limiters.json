@@ -19,7 +19,7 @@
         "no_archer_attack":                ["no_archer_defence"],
         "no_loom":                         ["instant_loom"],
         "no_sheep":                        ["send_sheep_to_solo"],
-        "no_gold_units":                   ["make_scouts", "make_maa", "make_archers", "make_rams", "make_scorpions", "make_uu"],
+        "no_gold_units":                   ["make_maa", "make_archers", "make_rams", "make_scorpions", "make_uu"],
         "no_walls":                        ["delete_all_walls"],
         "no_castle":                       ["no_uu", "no_unique_techs", "make_uu"],
         "no_uu":                           ["make_uu"],

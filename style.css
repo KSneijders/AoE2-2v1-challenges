@@ -109,8 +109,10 @@ select {
 }
 
 td.highlighted {
+    background-color: #fc4e4e;
+    border: 1px solid red;
     font-weight: bold;
-    color: #44F;
+    color: #000000;
 }
 
 sup.info {

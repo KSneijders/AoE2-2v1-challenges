@@ -53,7 +53,8 @@
         },
         {
             "name": "No extra TCs",
-            "points": 3
+            "points": 3,
+            "id": "no_extra_tcs"
         },
         {
             "name": "Kill % vills per age",
@@ -105,13 +106,15 @@
         },
         {
             "name": "No wheelbarrow line",
-            "points": 2
+            "points": 2,
+            "id": "no_wheelbarrow_line"
         },
         {
             "name": "All farms must touch a mill",
             "comment": "Farms don't have to actually touch the mill. Just max of 4 per mill and none at TC.",
             "points": 5,
-            "id": "all_farms_must_touch_mill"
+            "id": "all_farms_must_touch_mill",
+            "classes": ["game-changing"]
         },
         {
             "name": "Max farms",
@@ -272,16 +275,70 @@
             "classes": [
                 "castle"
             ]
+        },
+        {
+            "name": "Disable Barracks Unit",
+            "points": 1,
+            "id": "disable_barracks_unit",
+            "c-range": [
+                [
+                    1,
+                    "Militia line"
+                ],
+                [
+                    2,
+                    "Spearman line"
+                ]
+            ]
+        },
+        {
+            "name": "Disable Stable Unit",
+            "points": 1,
+            "comment": "If Indians, disable camels!!",
+            "id": "disable_stable_unit",
+            "c-range": [
+                [
+                    2,
+                    "Scout line"
+                ],
+                [
+                    3,
+                    "Knight line"
+                ]
+            ]
+        },
+        {
+            "name": "Disable Archery Range Unit",
+            "points": 1,
+            "id": "disable_archery_range_unit",
+            "c-range": [
+                [
+                    2,
+                    "Skirmisher line"
+                ],
+                [
+                    3,
+                    "Archer line"
+                ]
+            ]
+        },
+        {
+            "name": "Disable Siege Workshop Unit",
+            "points": 1,
+            "id": "disable_siege_workshop_unit",
+            "c-range": [
+                [
+                    1,
+                    "Ram line"
+                ],
+                [
+                    2,
+                    "Mangonal line"
+                ]
+            ]
         }
     ],
     "building": [
-        {
-            "name": "Every building twice",
-            "points": 8,
-            "classes": [
-                "game-changing"
-            ]
-        },
         {
             "name": "No walls",
             "points": 4,
@@ -302,21 +359,6 @@
             "points": 4
         },
         {
-            "name": "No barracks",
-            "points": 4,
-            "id": "no_barracks"
-        },
-        {
-            "name": "No archery range",
-            "points": 6,
-            "id": "no_archery_range"
-        },
-        {
-            "name": "No stable",
-            "points": 6,
-            "id": "no_stable"
-        },
-        {
             "name": "No university",
             "points": 1,
             "id": "no_university"
@@ -330,11 +372,6 @@
             "name": "No castles / kreposts",
             "points": 5,
             "id": "no_castle"
-        },
-        {
-            "name": "No siege workshop",
-            "points": 4,
-            "id": "no_siege_workshop"
         },
         {
             "name": "No market",
@@ -356,12 +393,44 @@
             "classes": [
                 "instant"
             ]
+        },
+        {
+            "name": "Make n houses",
+            "points": 1,
+            "c-range": [
+                [
+                    2,
+                    "15"
+                ],
+                [
+                    3,
+                    "20"
+                ]
+            ],
+            "id": "make_n_houses",
+            "classes": [
+                "dark"
+            ]
         }
     ],
     "technologies": [
         {
+            "name": "No blacksmith techs",
+            "id": "no_blacksmith_techs",
+            "points": 9
+        },
+        {
+            "name": "Get all blacksmith techs",
+            "points": 4,
+            "id": "get_all_blacksmith_techs",
+            "classes": [
+                "feudal", "castle"
+            ]
+        },
+        {
             "name": "No current age blacksmith techs",
-            "points": 5
+            "points": 5,
+            "id": "no_current_age_blacksmith_techs"
         },
         {
             "name": "No archer range & attack",
@@ -527,13 +596,14 @@
             "points": 2,
             "classes": [
                 "dark", "feudal", "castle"
-            ]
+            ],
+            "id": "delay_age_until_solo_aged"
         }
     ],
     "commands": [
         {
             "name": "Delete all forwards",
-            "points": 7
+            "points": 6
         },
         {
             "name": "Delete all houses",
@@ -657,9 +727,10 @@
             ]
         },
         {
-            "name": "Force age requirements",
-            "comment": "You cannot add anything to the global queue that does not work towards your given age requirements until all of them are done.",
-            "points": 2
+            "name": "Sacrifice 2/4/10 Trade Carts",
+            "comment": "You cannot ADD (!!!!) anything to the global queue until all trade carts have been sacrificed. This means that if you have upgrades in the queue they do not have to be cancelled! \n\nFEUDAL = 2 Carts\nCASTLE = 4 Carts\nIMP = 10 Carts",
+            "dev-comment": "Trade cart creation time is 51s.",
+            "points": 3
         },
         {
             "name": "Delete all flagged buildings (Feudal+)",
@@ -673,7 +744,10 @@
         {
             "name": "Ping TCs",
             "comment": "REMEMBER to change ALT-T. X all TCs you have!",
-            "points": 1
+            "points": 1,
+            "c-range": [
+                [1, "3x"]
+            ]
         },
         {
             "name": "Delete all farms & eco buildings",
@@ -685,8 +759,8 @@
             "comment": "Send all vills to a resource",
             "points": 1,
             "c-range": [
-                [2, "30s"],
-                [4, "60s"]
+                [2, "2x 30s"],
+                [4, "2x 60s"]
             ]
         }
     ]

@@ -54,3 +54,34 @@
     "name": "No laming",
     "points": 1
 },
+
+
+{
+    "name": "No barracks",
+    "points": 4,
+    "id": "no_barracks"
+},
+{
+    "name": "No archery range",
+    "points": 6,
+    "id": "no_archery_range"
+},
+{
+    "name": "No stable",
+    "points": 6,
+    "id": "no_stable"
+},
+
+{
+    "name": "Every building twice",
+    "points": 8,
+    "classes": [
+        "game-changing"
+    ]
+},
+
+{
+    "name": "No siege workshop",
+    "points": 4,
+    "id": "no_siege_workshop"
+},

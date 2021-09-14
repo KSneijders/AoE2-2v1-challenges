@@ -487,14 +487,6 @@
             "classes": [
                 "instant"
             ]
-        },
-        {
-            "name": "Get all market upgrades",
-            "points": 2,
-            "id": "get_all_market_upgrades",
-            "classes": [
-                "feudal","castle"
-            ]
         }
     ],
     "miscellaneous": [
